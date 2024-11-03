@@ -1,0 +1,932 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    hair: {
+        true: [
+            {id: 1, name: 'Коротко', price: 1000, creator: false},
+            {id: 2, name: '"Ястреб"', price: 1000, creator: true},
+            {id: 3, name: '"Хипстер"', price: 1000, creator: true},
+            {id: 4, name: 'Челка на бок', price: 1000, creator: false}, 
+            {id: 5, name: 'Коротко', price: 1000, creator: false},
+            {id: 6, name: '"Байкер"', price: 1000, creator: true},
+            {id: 7, name: '"Хвост"', price: 1000, creator: false},
+            {id: 8, name: 'Косички', price: 1000, creator: true},
+            {id: 9, name: '"Прилиза"', price: 1000, creator: false},
+            {id: 10, name: '"Коротко"', price: 1000, creator: true},
+            {id: 11, name: '"Шипы"', price: 1000, creator: true},
+            {id: 12, name: '"Цезарь"', price: 1000, creator: false},
+            {id: 13, name: '"Чоппи"', price: 1000, creator: true},
+            {id: 14, name: 'Дреды', price: 1000, creator: true},
+            {id: 15, name: 'Длинные', price: 1000, creator: false},
+            {id: 16, name: 'Лохматые кудри', price: 1000, creator: false}, 
+            {id: 17, name: '"Сёрфингист"', price: 1000, creator: false},
+            {id: 18, name: '"Набок"', price: 1000, creator: true},
+            {id: 19, name: '"Зализ"', price: 1000, creator: false},
+            {id: 20, name: '"Длинные"', price: 1000, creator: false},
+            {id: 21, name: '"Юный хипстер"', price: 1000, creator: true},
+            {id: 22, name: '"Веник"', price: 1000, creator: true},
+            {id: 24, name: 'Классически "косички"', price: 1000, creator: false},
+            {id: 25, name: 'Косички - "пальма"', price: 1000, creator: false},
+            {id: 26, name: 'Косички - "молния"', price: 1000, creator: false},
+            {id: 27, name: 'Зачесанные на верх косички', price: 1000, creator: false}, 
+            {id: 28, name: 'Косички - зигзаги', price: 1000, creator: false},
+            {id: 29, name: 'Косички - "улитки"', price: 1000, creator: false},
+            {id: 30, name: 'Хай-топ', price: 1000, creator: false},
+            {id: 31, name: 'Растрепанный зачес назад', price: 1000, creator: false},
+            {id: 32, name: 'Подстриженный зачес назад', shortname: "Подстр. зачес назад", price: 1000, creator: true},
+            {id: 33, name: 'Подстриженный зачес на бок', shortname: "Подстр. зачес на бок", price: 1000, creator: true},
+            {id: 34, name: 'Шипастый ирокез', price: 1000, creator: false},
+            {id: 35, name: '"Стиляга"', price: 1000, creator: true},
+            {id: 36, name: '"Стиляга" со слоями', price: 1000, creator: false},
+        ],
+        false: [
+            {id: 1, name: 'Коротко', price: 1000, creator: true},
+            {id: 2, name: '"Слои"', price: 1000, creator: true},
+            {id: 3, name: 'Косички', price: 1000, creator: true},
+            {id: 4, name: '"Хвост"', price: 1000, creator: true},
+            {id: 5, name: '"Ирокез"', price: 1000, creator: true},
+            {id: 6, name: '"Косички"', price: 1000, creator: false},
+            {id: 7, name: '"Боб"', price: 1000, creator: false},
+            {id: 8, name: '"Ястреб"', price: 1000, creator: false},
+            {id: 9, name: '"Ракушка"', price: 1000, creator: false},
+            {id: 10, name: '"Лонг Боб"', price: 1000, creator: true},
+            {id: 11, name: '"Свободно"', price: 1000, creator: true},
+            {id: 12, name: '"Пиксель"', price: 1000, creator: true},
+            {id: 13, name: 'Подбритые виски', price: 1000, creator: true},
+            {id: 14, name: '"Узел"', price: 1000, creator: false},
+            {id: 15, name: '"Волнистый Боб"', price: 1000, creator: true},
+            {id: 16, name: '"Красотка"', price: 1000, creator: true},
+            {id: 17, name: ' "Пучок"', price: 1000, creator: true},
+            {id: 18, name: '"Флэппер Боб"', price: 1000, creator: false},
+            {id: 19, name: '"Тугой узел"', price: 1000, creator: false},
+            {id: 20, name: '"Одуванчик"', price: 1000, creator: true},
+            {id: 21, name: '"Взрыв"', price: 1000, creator: false},
+            {id: 22, name: '"Узел"', price: 1000, creator: false},
+            {id: 25, name: '"Сколотые косички"', price: 1000, creator: false},
+            {id: 26, name: 'Косички - "листья"', price: 1000, creator: false},
+            {id: 27, name: 'Косички - зигзаги', price: 1000, creator: false},
+            {id: 28, name: '"Хвостики" с челкой', price: 1000, creator: false},
+            {id: 29, name: 'Косички - "волны"', price: 1000, creator: false},
+            {id: 30, name: 'Косички - завитки', price: 1000, creator: false},
+            {id: 31, name: 'Челка - валик', price: 1000, creator: false},
+            {id: 32, name: 'Растрёпанный зачес назад', price: 1000, creator: false},
+            {id: 33, name: 'Подстриженный зачес назад', price: 1000, creator: true},
+            {id: 34, name: 'Подстриженный зачес набок', price: 1000, creator: true},
+            {id: 35, name: 'Шипастый ирокез', price: 1000, creator: false},
+            {id: 36, name: 'Бандана и косички', price: 1000, creator: false},
+            {id: 37, name: '"Челси"', price: 1000, creator: true},
+            {id: 38, name: '"Стиляга" со слоями', price: 1000, creator: true},
+        ]
+    },
+    eyebrows: [
+        {id: 0, name: 'Аккуратные', price: 100, creator: true},
+        {id: 1, name: 'Модные', price: 100, creator: true},
+        {id: 2, name: 'Клеопатра', price: 100, creator: false},
+        {id: 3, name: 'Ироничные', price: 100, creator: true},
+        {id: 4, name: 'Женственные', price: 100, creator: false},
+        {id: 5, name: 'Обольстительные', price: 100, creator: false}, 
+        {id: 6, name: 'Нахмуренные', price: 100, creator: true},
+        {id: 7, name: 'Чикса', price: 100, creator: false},
+        {id: 8, name: 'Торжествующие', price: 100, creator: false},
+        {id: 9, name: 'Беззаботные', price: 100, creator: true},
+        {id: 10, name: 'Дугой', price: 100, creator: true},
+        {id: 11, name: 'Мышка', price: 100, creator: true},
+        {id: 12, name: 'Двойная высечка', price: 100, creator: false},
+        {id: 13, name: 'Впалые', price: 100, creator: false},
+        {id: 14, name: 'Нарисованные карандашом', price: 100, creator: false},
+        {id: 15, name: 'Выщипанные', price: 100, creator: false},
+        {id: 16, name: 'Прямые и тонкие', price: 100, creator: false},
+        {id: 17, name: 'Естественная', price: 100, creator: false},
+        {id: 18, name: 'Пышные', price: 100, creator: true},
+        {id: 19, name: 'Неопрятные', price: 100, creator: true},
+        {id: 20, name: 'Широкие', price: 100, creator: false},
+        {id: 21, name: 'Обычные', price: 100, creator: false},
+        {id: 22, name: 'Южно-европейские', price: 100, creator: true},
+        {id: 23, name: 'Ухоженные', price: 100, creator: true}, 
+        {id: 24, name: 'Кустистые', price: 100, creator: true},
+        {id: 25, name: 'Перышки', price: 100, creator: true},
+        {id: 26, name: 'Колючие', price: 100, creator: false},
+        {id: 27, name: 'Сросшиеся', price: 100, creator: false},
+        {id: 28, name: 'Крылатые', price: 100, creator: false},
+        {id: 29, name: 'Тройная высечка', price: 100, creator: true},
+        {id: 30, name: 'Высечка дугой', price: 100, creator: false},
+        {id: 31, name: 'Подрезанные', price: 100, creator: false},
+        {id: 32, name: 'Сходящие на нет', price: 100, creator: false}, 
+        {id: 33, name: 'Высечка', price: 100, creator: false},
+    ],
+    facialhair: [
+        {id: 255, name: "Гладкая кожа", price: 100, creator: true},
+        {id: 0, name: 'Легкая щетина', price: 100, creator: true},
+        {id: 1, name: 'Бальбо', price: 100, creator: true},
+        {id: 2, name: 'Круглая борода', price: 100, creator: true},
+        {id: 3, name: 'Эспаньолка', price: 100, creator: true},
+        {id: 4, name: 'Козлиная бородка', price: 100, creator: true},
+        {id: 5, name: 'Островок', price: 100, creator: true},
+        {id: 6, name: 'Тонкая бородка', price: 100, creator: true},
+        {id: 7, name: 'Короткая бородка', price: 100, creator: true},
+        {id: 8, name: 'Мушкетёр', price: 100, creator: true},
+        {id: 9, name: 'Усы', price: 100, creator: true},
+        {id: 10, name: 'Подстриженная борода', price: 100, creator: true},
+        {id: 11, name: 'Щетина', price: 100, creator: true},
+        {id: 12, name: 'Круглая борода', price: 100, creator: true},
+        {id: 13 , name: 'Борода-подкова', price: 100, creator: false},
+        {id: 14, name: 'Карандашные усы и баки', price: 100, creator: false},
+        {id: 15, name: 'Борода-ремень', price: 100, creator: false},
+        {id: 16, name: 'Бальбо и баки', price: 100, creator: false},
+        {id: 17, name: 'Баки', price: 100, creator: false},
+        {id: 18, name: 'Короткая бородка', price: 100, creator: false},
+        {id: 19, name: 'Дали', price: 100, creator: false},
+        {id: 20, name: 'Дали и борода', price: 100, creator: false},
+        {id: 21, name: 'Велосипедный руль', price: 100, creator: false},
+        {id: 22, name: 'Островок с усами', price: 100, creator: false},
+        {id: 23, name: 'Английские усы с пеньком', price: 100, creator: false},
+        {id: 24, name: 'Голливудская борода', price: 100, creator: false},
+        {id: 25, name: 'Фу манчу', price: 100, creator: false},
+        {id: 26, name: 'Островок с баками', price: 100, creator: false},
+        {id: 27, name: 'Широкие баки', price: 100, creator: false},
+        {id: 28, name: 'Борода "ширма"', price: 100, creator: false},
+    ],
+    chesthair: [//-
+        {id: 255, name: "Гладкая кожа", price: 100},
+        {id: 0, name: "Естественный", price: 100},
+        {id: 1, name: "Полоска", price: 100},
+        {id: 2, name: "Дерево", price: 100},
+        {id: 3, name: "Волосатая", price: 100}, 
+        {id: 4, name: " Заросшая", price: 100},
+        {id: 5, name: "Обезьяна", price: 100},
+        {id: 6, name: "Причёсанная обезьяна", price: 100},
+        {id: 7, name: "Бикини", price: 100},
+        {id: 8, name: "Молния", price: 100},
+        {id: 9, name: "Обратная молния", price: 100},
+        {id: 10, name: "Сердечко", price: 100},
+        {id: 11, name: "Усы", price: 100},
+        {id: 12, name: "Смайлик", price: 100}, 
+        {id: 13, name: "Череп", price: 100},
+        {id: 14, name: "Тропинка", price: 100},
+        {id: 15, name: "Тропинка и соски", price: 100}, 
+        {id: 16, name: "Волосатые руки", price: 100}
+    ],
+    blemishes: [
+        {id: 255, name: "Нет"},
+        {id: 0, name: "Краснуха"},
+        {id: 1, name: "Корь"},
+        {id: 2, name: "Пятна"},
+        {id: 3, name: "Сыпь"},
+        {id: 4, name: "Угри"},
+        {id: 5, name: "Налёт"},
+        {id: 6, name: "Гнойники"},
+        {id: 7, name: "Прыщики"},
+        {id: 8, name: "Большие прыщи"},
+        {id: 9, name: "Прыщи"},
+        {id: 10, name: "Сыпь на щёках"},
+        {id: 11, name: "Сыпь на лице"},
+        {id: 12, name: "Расковыренные"},
+        {id: 13, name: "Пубертат"},
+        {id: 14, name: "Язва"},
+        {id: 15, name: "Сыпь на челюсти"},
+        {id: 16, name: "С двумя лицами"},
+        {id: 17, name: "Зона T"},
+        {id: 18, name: "Сальная кожа"},
+        {id: 19, name: "Шрамы"},
+        {id: 20, name: "Шрамы от прыщей"},
+        {id: 21, name: "Рубцы от прыщей"},
+        {id: 22, name: "Герпес"},
+        {id: 23, name: "Лишай"},
+    ],
+    ageing: [
+        {id: 255, name: "Нет"},
+        {id: 0, name: "Морщины глаз"},
+        {id: 1, name: "Признаки старения"},
+        {id: 2, name: "Средний возраст"},
+        {id: 3, name: "Морщины"},
+        {id: 4, name: "Депрессия"},
+        {id: 5, name: "Пожилой"},
+        {id: 6, name: "Старость"},
+        {id: 7, name: "Обветренная кожа"},
+        {id: 8, name: "Морщинистая кожа"},
+        {id: 9, name: "Обвисшая кожа"},
+        {id: 10, name: "Тяжёлая жизнь"},
+        {id: 11, name: "Винтаж"},
+        {id: 12, name: "Пенсионный"},
+        {id: 13, name: "Наркомания"},
+        {id: 14, name: "Престарелость"},
+        {id: 15, name: "Депрессия"}
+    ],
+    complexion: [
+        {id: 255, name: "Нет"},
+        {id: 0, name: "Румянец"},
+        {id: 1, name: "Раздражение от щетины"},
+        {id: 2, name: "Покраснение"},
+        {id: 3, name: "Солнечный ожог"},
+        {id: 4, name: "Синяки"},
+        {id: 5, name: "Алкоголизм"},
+        {id: 6, name: "Пятна"},
+        {id: 7, name: "Тотем"},
+        {id: 8, name: "Кровеносные сосуды"},
+        {id: 9, name: "Повреждения"},
+        {id: 10, name: "Бледная"},
+        {id: 11, name: "Мёртво-бледная"}
+    ],
+    molesfreckles: [
+        {id: 255, name: "Нет"},
+        {id: 0, name: "Ангелочек"},
+        {id: 1, name: "Повсюду"},
+        {id: 2, name: "Местами"},
+        {id: 3, name: "Единичные"},
+        {id: 4, name: "Переносица"},
+        {id: 5, name: "Куколка"},
+        {id: 6, name: "Фея"},
+        {id: 7, name: "Загорелая"},
+        {id: 8, name: "Родинки"},
+        {id: 9, name: "Ряд"},
+        {id: 10, name: "Как у модели"},
+        {id: 11, name: "Редкие"},
+        {id: 12, name: "Веснушки"},
+        {id: 13, name: "Капельки"},
+        {id: 14, name: "Удвоенность"},
+        {id: 15, name: "Одна сторона"},
+        {id: 16, name: "Пары"},
+        {id: 17, name: "Бородавки"}
+    ],
+    sundamage: [
+        {id: 255, name: "Нет"},
+        {id: 0, name: "Неровная"},
+        {id: 1, name: "Наждак"},
+        {id: 2, name: "Пятнистая"},
+        {id: 3, name: "Грубая"},
+        {id: 4, name: "Жёсткая"},
+        {id: 5, name: "Шероховатая"},
+        {id: 6, name: "Загрубленная"},
+        {id: 7, name: "Неровная"},
+        {id: 8, name: "Со складками"},
+        {id: 9, name: "Трещины"},
+        {id: 10, name: "Твердая"}
+    ],
+    eyescolor: [
+        {id: 0, name: 'Зеленые', price: 100},
+        {id: 1, name: 'Изумрудные', price: 100},
+        {id: 2, name: 'Голубые', price: 100},
+        {id: 3, name: 'Синие', price: 100},
+        {id: 4, name: 'Светлый шатен', price: 100},
+        {id: 5, name: 'Темно-коричневый', price: 100},
+        {id: 6, name: 'Карий', price: 100},
+        {id: 7, name: 'Темно-серый', price: 100},
+        {id: 8, name: 'Светло-серый', price: 100}
+    ],
+    blush: [ // Румяна//-
+        {id: 255, name: "Нет", price: 100},
+        {id: 0, name: "Полный", price: 100},
+        {id: 1, name: "Под углом", price: 100},
+        {id: 2, name: "Округлый", price: 100},
+        {id: 3, name: "Горизонтальный", price: 100},
+        {id: 4, name: "На скулах", price: 100},
+        {id: 5, name: "Красотка", price: 100},
+        {id: 6, name: "В стиле 80-х", price: 100},
+    ],
+    eyesmakeup: [//-
+        {id: 255, name: "Нет", price: 100},
+        {id: 0, name: "Дымчато-чёрный", price: 100},
+        {id: 1, name: "Бронзовый", price: 100},
+        {id: 2, name: "Мягкий серый", price: 100},
+        {id: 3, name: "Ретро-гламур", price: 100},
+        {id: 4, name: "Естественный", price: 100},
+        {id: 5, name: "Кошачьи глаза", price: 100},
+        {id: 6, name: "Чикса", price: 100},
+        {id: 7, name: "Вамп", price: 100},
+        {id: 8, name: "Вайнвудский гламур", price: 100},
+        {id: 9, name: "Баблгам", price: 100},
+        {id: 10, name: "Мечта о море", price: 100},
+        {id: 11, name: "Пин-ап", price: 100},
+        {id: 12, name: "Лиловая страсть", price: 100},
+        {id: 13, name: "Дымчатые кошачьи глаза", price: 100},
+        {id: 14, name: "Огненный рубин", price: 100},
+        {id: 15, name: "Эстрадная приценсса", price: 100},
+        {id: 16, name: "Тушь для глаз", price: 100},
+        {id: 17, name: "Кровены слёзы", price: 100},
+        {id: 18, name: "Хеви-метал", price: 100},
+        {id: 19, name: "Печаль", price: 100},
+        {id: 20, name: "Князь тьмы", price: 100},
+        {id: 21, name: "Рокер", price: 100},
+        {id: 22, name: "Гот", price: 100},
+        {id: 23, name: "Панк", price: 100},
+        {id: 24, name: "Сокрушённость", price: 100},
+    ],
+    lipstick: [
+        {id: 255, name: "Нет", price: 100},
+        {id: 0, name: "Цветные матовые", price: 100},
+        {id: 1, name: "Цветные блестящие", price: 100},
+        {id: 2, name: "Контур, матовые", price: 100},
+        {id: 3, name: "Контур, блестящие", price: 100},
+        {id: 4, name: "Жирный контур, матовые", price: 100},
+        {id: 5, name: "Жирный контур, блестящие", price: 100},
+        {id: 6, name: "Некрашен, контур, матовые", price: 100},
+        {id: 7, name: "Некрашен, контур, блеск", price: 100},
+        {id: 8, name: "Размазанная помада", price: 100},
+        {id: 9, name: "Гейша", price: 100}
+    ]
+});
+
+/***/ }),
+
+/***/ "./src/views/player/newauthentication/chars/create/elements/characteristics/characteristics.js":
+/*!*****************************************************************************************************!*\
+  !*** ./src/views/player/newauthentication/chars/create/elements/characteristics/characteristics.js ***!
+  \*****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    brow: [
+        {name: "Стандарт", x: 0.0, y: 0.0},
+        {name: "Выступающий", x: 0.8, y: 0.2},
+        {name: "Плоский", x: -0.5, y: 0.0}
+    ],
+    eyes: [
+        {name: "Стандарт", x: 0.0, y: 0.0},
+        {name: "Широкие", x: 0.7, y: 0.0},
+        {name: "Узкие", x: -0.7, y: 0.0}
+    ],
+    nose: [
+        {name: "Стандарт", x: 0.0, y: 0.0},
+        {name: "Большой", x: 0.7, y: 0.4},
+        {name: "Маленький", x: -0.7, y: -0.4}
+    ],
+    noseprofile: [
+        {name: "Стандарт", x: 0.0, y: 0.0},
+        {name: "Выгнутый", x: 0.2, y: -0.7},
+        {name: "С горбинкой", x: -0.2, y: 0.7}
+    ],
+    nosetip: [
+        {name: "Стандарт", x: 0.0, y: 0.0},
+        {name: "Искривленный", x: -0.7, y: 0.0},
+        {name: "Кверху", x: 0.0, y: -0.6}
+    ],
+    cbones: [
+        {name: "Стандарт", x: 0.0, y: 0.0},
+        {name: "Большие", x: 0.4, y: 0.4},
+        {name: "Маленькие", x: -0.4, y: -0.4}
+    ],
+    cheeks: [
+        {name: "Стандарт", x: 0.0, y: 0.0},
+        {name: "Толстые", x: 0.7, y: 0.0},
+        {name: "Впалые", x: -0.7, y: 0.0}
+    ],
+    lips: [
+        {name: "Стандарт", x: 0.0, y: 0.0},
+        {name: "Большие", x: 0.7, y: 0.0},
+        {name: "Маленькие", x: -0.7, y: 0.0},
+    ],
+    jaw: [
+        {name: "Стандарт", x: 0.0, y: 0.0},
+        {name: "Квадратная", x: 0.0, y: 0.6}, 
+        {name: "Круглая", x: 0.0, y: -0.6}
+    ],
+    chinprofile: [
+        {name: "Стандарт", x: 0.0, y: 0.0},
+        {name: "Большой", x: 0.7, y: 0.4},
+        {name: "Маленький", x: -0.7, y: -0.4}
+    ],
+    chinform: [
+        {name: "Стандарт", x: 0.0, y: 0.0},
+        {name: "Заостренный", x: 0.5, y: 0.0},
+        {name: "Круглый", x: -0.3, y: -0.4},
+    ],
+});
+
+/***/ }),
+
+/***/ "./src/views/player/newauthentication/chars/create/elements/characteristics/indexes.js":
+/*!*********************************************************************************************!*\
+  !*** ./src/views/player/newauthentication/chars/create/elements/characteristics/indexes.js ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    brow: {
+        xindex: 7,
+        yindex: 6
+    },
+    eyes: {
+        xindex: 11,
+        yindex: 0
+    },
+    nose: {
+        xindex: 0, 
+        yindex: 1
+    },
+    noseprofile: {
+        xindex: 2,
+        yindex: 3
+    },
+    nosetip: {
+        xindex: 5, 
+        yindex: 4
+    },
+    cbones: {
+        xindex: 9, 
+        yindex: 8
+    },
+    cheeks: {
+        xindex: 10,
+        yindex: -1,
+    },
+    lips: {
+        xindex: 12,
+        yindex: -1
+    },
+    jaw: {
+        xindex: 13, 
+        yindex: 14
+    },
+    chinprofile: {
+        xindex: 15, 
+        yindex: 16
+    },
+    chinform: {
+        xindex: 17, 
+        yindex: 18
+    },
+});
+
+/***/ }),
+
+/***/ "./src/views/player/newauthentication/chars/create/elements/clothes/clothes.js":
+/*!*************************************************************************************!*\
+  !*** ./src/views/player/newauthentication/chars/create/elements/clothes/clothes.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    true: {
+        head: [
+            {name: "Отсутствует", drawable: -1, texture: 0},
+            {name: "Черная панамка", drawable: 3, texture: 1},
+            {name: "Бежевая панамка", drawable: 3, texture: 2},
+            {name: "Черная шапка", drawable: 5, texture: 0},
+            {name: "Серая шапка", drawable: 5, texture: 1},
+            {name: "Зеленая кепка назад", drawable: 9, texture: 5},
+            {name: "Зеленая кепка вперёд", drawable: 10, texture: 5},
+            {name: "Фиолетовая кепка вперёд", drawable: 10, texture: 7},
+            {name: "Новогодняя колпак 'Ёлка'", drawable: 97, texture: 0},
+            {name: "Новогодняя колпак 'Волшебник'", drawable: 97, texture: 3},
+            {name: "Новогодняя колпак 'Бубенцы'", drawable: 97, texture: 2},
+        ],
+        tops: [
+            {name: "Белая футболка", drawable: 0, texture: 0},
+            {name: "Серая футболка", drawable: 0, texture: 1},
+            {name: "Черная футболка", drawable: 0, texture: 2},
+            {name: "Желтая футболка", drawable: 0, texture: 3},
+            {name: "Толстовка", drawable: 8, texture: 0},
+            {name: "Новогодний свитер", drawable: 194, texture: 0},
+            {name: "Белая рубашка", drawable: 144, texture: 0},
+        ],
+        legs: [
+            {name: "Темные джинсы", drawable: 1, texture: 1},
+            {name: "Серые джинсы", drawable: 1, texture: 2},
+            {name: "Синие джинсы", drawable: 1, texture: 5},
+            {name: "Темные зауженные джинсы", drawable: 4, texture: 0},
+            {name: "Серые зауженные джинсы", drawable: 4, texture: 1},
+            {name: "Светлые зауженные джинсы", drawable: 4, texture: 2},
+            {name: "Бежевые шорты", drawable: 15, texture: 0},
+            {name: "Коричневые шорты", drawable: 15, texture: 1},
+            {name: "Белые шорты", drawable: 15, texture: 2},
+            {name: "Темные шорты", drawable: 15, texture: 3},
+        ],
+        shoes: [
+            {name: "Черные кеды", drawable: 1, texture: 0},
+            {name: "Белые кеды", drawable: 1, texture: 1},
+            {name: "Красные кеды", drawable: 1, texture: 10},
+            {name: "Коричневые ботинки", drawable: 12, texture: 0},
+            {name: "Голубые ботинки", drawable: 12, texture: 2},
+            {name: "Черные ботинки", drawable: 12, texture: 6},
+        ]
+    },
+    false: {
+        head: [
+            {name: "Отсутствует", drawable: -1, texture: 0},
+            {name: "Черная шапка", drawable: 5, texture: 0},
+            {name: "Белая шапка", drawable: 5, texture: 1},
+            {name: "Розовая шапка", drawable: 5, texture: 2},
+            {name: "Темная панамка", drawable: 3, texture: 7},
+            {name: "Бежевая кепка", drawable: 10, texture: 7},
+            {name: "Новогодняя шляпа", drawable: 97, texture: 0},
+            {name: "Новогодняя шляпа 'Ёлка'", drawable: 39, texture: 0},
+        ],
+        tops: [
+            {name: "Белая майка", drawable: 0, texture: 0},
+            {name: "Розовая майка", drawable: 0, texture: 1},
+            {name: "Черная майка", drawable: 0, texture: 2},
+            {name: "Синяя майка", drawable: 0, texture: 6},
+            {name: "Белое поло", drawable: 14, texture: 0},
+            {name: "Розовое поло", drawable: 14, texture: 1},
+            {name: "Нежно розовое поло", drawable: 14, texture: 2},
+            {name: "Черное поло", drawable: 14, texture: 3},
+            {name: "Новогодняя футболка", drawable: 19, texture: 0},
+        ],
+        legs: [
+            {name: "Светлые джинсы", drawable: 0, texture: 0},
+            {name: "Темные джинсы", drawable: 0, texture: 1},
+            {name: "Короткие белые шорты", drawable: 10, texture: 0},
+            {name: "Короткие синие шорты", drawable: 10, texture: 1},
+            {name: "Белые спортивные штаны", drawable: 2, texture: 0},
+            {name: "Серые спортивные штаны", drawable: 2, texture: 1},
+            {name: "Черные спортивные штаны", drawable: 2, texture: 2},
+        ],
+        shoes: [
+            {name: "Белые кеды", drawable: 1, texture: 0},
+            {name: "Темные кеды", drawable: 1, texture: 1},
+            {name: "Серые кеды", drawable: 1, texture: 2},
+            {name: "Темные туфли", drawable: 13, texture: 0},
+        ]
+    }
+});
+
+/***/ }),
+
+/***/ "./src/views/player/newauthentication/chars/create/elements/info/parents.js":
+/*!**********************************************************************************!*\
+  !*** ./src/views/player/newauthentication/chars/create/elements/info/parents.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    false: [
+        {gtaId: 0, name: 'Бенджамин'},
+        {gtaId: 1, name: 'Даниэль'},
+        {gtaId: 2, name: 'Джошва'},
+        {gtaId: 3, name: 'Ноа'},
+        {gtaId: 4, name: 'Эндрю'},
+        {gtaId: 5, name: 'Джуан'},
+        {gtaId: 6, name: 'Алекс'},
+        {gtaId: 7, name: 'Исаак'},
+        {gtaId: 8, name: 'Иван'},
+        {gtaId: 9, name: 'Итан'},
+        {gtaId: 10, name: 'Винсент'},
+        {gtaId: 11, name: 'Анжел'},
+        {gtaId: 12, name: 'Диего'},
+        {gtaId: 13, name: 'Адриан'},
+        {gtaId: 14, name: 'Габриель'},
+        {gtaId: 15, name: 'Майкл'},
+        {gtaId: 16, name: 'Сантиаго'},
+        {gtaId: 17, name: 'Кевин'},
+        {gtaId: 18, name: 'Луис'},
+        {gtaId: 19, name: 'Самуэль'},
+        {gtaId: 20, name: 'Энтони'},        
+        {gtaId: 21, name: 'Ханна'},
+        {gtaId: 22, name: 'Одри'}, //Страшная шо пиздец
+        {gtaId: 23, name: 'Джасмин'},
+        {gtaId: 24, name: 'Джизель'}, //Тоже страху нагоняет
+        {gtaId: 25, name: 'Амелия'},
+        {gtaId: 26, name: 'Изабелла'},
+        {gtaId: 27, name: 'Зоя'},
+        {gtaId: 28, name: 'Ава'},
+        {gtaId: 29, name: 'Камила'},
+        {gtaId: 30, name: 'Виолетта'},
+        {gtaId: 31, name: 'София'},
+        {gtaId: 32, name: 'Эвелина'},
+        {gtaId: 33, name: 'Николь'},
+        {gtaId: 34, name: 'Эшли'},
+        {gtaId: 35, name: 'Грейси'},
+        {gtaId: 36, name: 'Брианна'},
+        {gtaId: 37, name: 'Натали'},
+        {gtaId: 38, name: 'Оливия'},
+        {gtaId: 39, name: 'Элизабет'},
+        {gtaId: 40, name: 'Шарлотта'},
+        {gtaId: 41, name: 'Эмма'},        
+        {gtaId: 42, name: 'Клод'},
+        {gtaId: 43, name: 'Нико'},
+        {gtaId: 44, name: 'Джон'},
+        {gtaId: 45, name: 'Мисти'},
+    ],
+    true: [
+        {gtaId: 0, name: 'Бенджамин'},
+        {gtaId: 1, name: 'Даниэль'},
+        {gtaId: 2, name: 'Джошва'},
+        {gtaId: 3, name: 'Ноа'},
+        {gtaId: 4, name: 'Эндрю'},
+        {gtaId: 5, name: 'Джуан'},
+        {gtaId: 6, name: 'Алекс'},
+        {gtaId: 7, name: 'Исаак'},
+        {gtaId: 8, name: 'Иван'},
+        {gtaId: 9, name: 'Итан'},
+        {gtaId: 10, name: 'Винсент'},
+        {gtaId: 11, name: 'Анжел'},
+        {gtaId: 12, name: 'Диего'},
+        {gtaId: 13, name: 'Адриан'},
+        {gtaId: 14, name: 'Габриель'},
+        {gtaId: 15, name: 'Майкл'},
+        {gtaId: 16, name: 'Сантиаго'},
+        {gtaId: 17, name: 'Кевин'},
+        {gtaId: 18, name: 'Луис'},
+        {gtaId: 19, name: 'Самуэль'},
+        {gtaId: 20, name: 'Энтони'},        
+        {gtaId: 21, name: 'Ханна'},
+        {gtaId: 22, name: 'Одри'}, //Страшная шо пиздец
+        {gtaId: 23, name: 'Джасмин'},
+        {gtaId: 24, name: 'Джизель'}, //Тоже страху нагоняет
+        {gtaId: 25, name: 'Амелия'},
+        {gtaId: 26, name: 'Изабелла'},
+        {gtaId: 27, name: 'Зоя'},
+        {gtaId: 28, name: 'Ава'},
+        {gtaId: 29, name: 'Камила'},
+        {gtaId: 30, name: 'Виолетта'},
+        {gtaId: 31, name: 'София'},
+        {gtaId: 32, name: 'Эвелина'},
+        {gtaId: 33, name: 'Николь'},
+        {gtaId: 34, name: 'Эшли'},
+        {gtaId: 35, name: 'Грейси'},
+        {gtaId: 36, name: 'Брианна'},
+        {gtaId: 37, name: 'Натали'},
+        {gtaId: 38, name: 'Оливия'},
+        {gtaId: 39, name: 'Элизабет'},
+        {gtaId: 40, name: 'Шарлотта'},
+        {gtaId: 41, name: 'Эмма'},        
+        {gtaId: 42, name: 'Клод'},
+        {gtaId: 43, name: 'Нико'},
+        {gtaId: 44, name: 'Джон'},
+        {gtaId: 45, name: 'Мисти'},
+    ],
+});
+
+/***/ }),
+
+/***/ "./src/views/player/newauthentication/chars/store.js":
+/*!***********************************************************!*\
+  !*** ./src/views/player/newauthentication/chars/store.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "settings": () => (/* binding */ settings),
+/* harmony export */   "selectChar": () => (/* binding */ selectChar),
+/* harmony export */   "selectType": () => (/* binding */ selectType),
+/* harmony export */   "selectIndex": () => (/* binding */ selectIndex)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+
+
+const settings = {
+    char: 0,
+    create: 1,
+    buy: 2
+}
+
+const selectChar = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+const selectType = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+const selectIndex = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(-1);
+
+/***/ }),
+
+/***/ "./src/views/player/newauthentication/store.js":
+/*!*****************************************************!*\
+  !*** ./src/views/player/newauthentication/store.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "isInput": () => (/* binding */ isInput),
+/* harmony export */   "isSend": () => (/* binding */ isSend)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+
+
+const isInput = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+const isSend = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+
+/***/ }),
+
+/***/ "./src/views/player/reports/index.js":
+/*!*******************************************!*\
+  !*** ./src/views/player/reports/index.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "text": () => (/* binding */ text),
+/* harmony export */   "selected": () => (/* binding */ selected),
+/* harmony export */   "reportsData": () => (/* binding */ reportsData)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+/* harmony import */ var api_formatter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! api/formatter */ "./src/api/formatter.js");
+
+
+
+const text = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)("");
+const selected = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+
+const _reportsDataStore = () => {
+
+    let state = []
+    const { subscribe, set } = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(state);
+
+    window.reportsStore = {
+        addReport: (id_, author_, text_) => {
+            text_ = (0,api_formatter__WEBPACK_IMPORTED_MODULE_1__.format)("parseDell", text_);
+            state.unshift({
+                id: id_,
+                author: author_,
+                text: text_,
+                blocked: false,
+                blockedBy: ''
+            });
+            set(state);
+        },
+        setStatus: (id, name) => {
+            const index = state.findIndex(r => r.id == id);
+            if (state[index]) {
+                if (name.length === 0) {
+                    state[index].blocked = false;
+                    state[index].blockedBy = "";
+                } else {
+                    state[index].blocked = true;
+                    state[index].blockedBy = name;
+                }
+                set(state);
+            }
+        },
+
+        deleteReport: (id) => {
+            const index = state.findIndex(r => r.id == id);
+            if (!state[index]) return;
+
+            state.splice(index, 1);
+            set(state);
+        }
+    }  
+	return {
+        subscribe,
+        init: () => window.reports (),
+	};
+}
+
+const reportsData = _reportsDataStore();
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		if(__webpack_module_cache__[moduleId]) {
+/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	// module exports must be returned from runtime so entry inlining is disabled
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__("./src/main.js");
+/******/ })()
+;
+});
+//# sourceMappingURL=bundle.js.map
