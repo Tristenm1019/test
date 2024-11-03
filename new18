@@ -1,0 +1,1866 @@
+
+
+/* type
+    quest - Обычный квест который только в меню
+    lists - Простой список с квестами не помню для чего
+    talk - разговорный квест
+*/
+const list = {
+    npc_tracy: _ValentineDay_npc_tracy_json__WEBPACK_IMPORTED_MODULE_0__,
+    npc_doctor: _ValentineDay_npc_doctor_json__WEBPACK_IMPORTED_MODULE_1__,
+    npc_granny: _ValentineDay_npc_granny_json__WEBPACK_IMPORTED_MODULE_2__,
+
+    npc_fd_dada: _defenderFatherlandDay_npc_dada_json__WEBPACK_IMPORTED_MODULE_3__,
+    npc_fd_edward: _defenderFatherlandDay_npc_pavel_json__WEBPACK_IMPORTED_MODULE_4__,
+    npc_fd_zak: _defenderFatherlandDay_npc_zak_json__WEBPACK_IMPORTED_MODULE_5__,
+
+    npc_airdrop: _npc_airdrop_json__WEBPACK_IMPORTED_MODULE_6__,
+    npc_oressale: _npc_oressale_json__WEBPACK_IMPORTED_MODULE_7__,
+    npc_fracpolic: _fraction_npc_fracpolic_json__WEBPACK_IMPORTED_MODULE_8__,
+    npc_fracsheriff: _fraction_npc_fracsheriff_json__WEBPACK_IMPORTED_MODULE_9__,
+    npc_fracnews: _fraction_npc_fracnews_json__WEBPACK_IMPORTED_MODULE_10__,
+    npc_fracems: _fraction_npc_fracems_json__WEBPACK_IMPORTED_MODULE_11__,
+    
+    npc_premium: _biz_npc_premium_json__WEBPACK_IMPORTED_MODULE_12__,
+
+    npc_stock: _npc_stock_json__WEBPACK_IMPORTED_MODULE_15__,
+    npc_huntingshop: _npc_huntingshop_json__WEBPACK_IMPORTED_MODULE_13__,
+    npc_treessell: _npc_treessell_json__WEBPACK_IMPORTED_MODULE_14__,
+
+    npc_donateautoroom: _npc_donateautoroom_json__WEBPACK_IMPORTED_MODULE_16__,
+    npc_cityhall: _npc_cityhall_json__WEBPACK_IMPORTED_MODULE_17__,
+    npc_wedding: _npc_wedding_json__WEBPACK_IMPORTED_MODULE_18__,
+
+    npc_pet: _biz_npc_pet_json__WEBPACK_IMPORTED_MODULE_19__,
+    npc_petshop: _biz_npc_petshop_json__WEBPACK_IMPORTED_MODULE_20__,
+    npc_furniture: _biz_npc_furniture_json__WEBPACK_IMPORTED_MODULE_22__,
+    npc_rieltor: _biz_npc_rieltor_json__WEBPACK_IMPORTED_MODULE_21__,
+    npc_carevac: _npc_carevac_json__WEBPACK_IMPORTED_MODULE_23__,
+    npc_airshop: _npc_airshop_json__WEBPACK_IMPORTED_MODULE_24__,
+    npc_eliteroom: _npc_eliteroom_json__WEBPACK_IMPORTED_MODULE_25__,
+
+    npc_zdobich: _npc_zdobich_json__WEBPACK_IMPORTED_MODULE_26__,
+
+    npc_automechanic: _work_npc_automechanic_json__WEBPACK_IMPORTED_MODULE_27__,
+    npc_bus: _work_npc_bus_json__WEBPACK_IMPORTED_MODULE_28__,
+    npc_collector: _work_npc_collector_json__WEBPACK_IMPORTED_MODULE_29__,
+    npc_electrician: _work_npc_electrician_json__WEBPACK_IMPORTED_MODULE_30__,
+    npc_gopostal: _work_npc_gopostal_json__WEBPACK_IMPORTED_MODULE_31__,
+    npc_lawnmower: _work_npc_lawnmower_json__WEBPACK_IMPORTED_MODULE_32__,
+    npc_taxi: _work_npc_taxi_json__WEBPACK_IMPORTED_MODULE_33__,
+    npc_truckers: _work_npc_truckers_json__WEBPACK_IMPORTED_MODULE_34__,
+    npc_org: _npc_org_json__WEBPACK_IMPORTED_MODULE_35__,
+    npc_birthday: _npc_birthday_json__WEBPACK_IMPORTED_MODULE_36__,
+}
+
+const actorData = {
+    npc_tracy: {
+        name: "Трейси"
+    },
+    npc_doctor: {
+        name: "Доктор Шульц"
+    },
+    npc_granny: {
+        name: "Бабушка Грэнни"
+    },
+
+    npc_fd_dada: {
+        name: "Дядюшка"
+    },
+    npc_fd_edward: {
+        name: "Эдвард"
+    },
+    npc_fd_zak: {
+        name: "Зак Цукерберг"
+    },
+    npc_airdrop: {
+        name: "Juan de cartel"
+    },
+    npc_oressale: {
+        name: "Марк"
+    },
+    npc_fracpolic: {
+        name: "Работник полиции"
+    },
+    npc_fracsheriff: {
+        name: "Шериф"
+    },
+    npc_fracnews: {
+        name: "Дженнифер"
+    },
+    npc_fracems: {
+        name: "Эммануэль"
+    },
+    npc_premium: {
+        name: "Вовчик"
+    },
+    npc_stock: {
+        name: "Александр"
+    },
+    npc_huntingshop: {
+        name: "Беар Гриллс"
+    },
+    npc_treessell: {
+        name: "Дмитрий"
+    },
+    npc_donateautoroom: {
+        name: "Доната Редбаксовна"
+    },
+    npc_cityhall: {
+        name: "Эльнара Каримова"
+    },
+    npc_wedding: {
+        name: "Отец Михаил"
+    },
+    npc_pet: {
+        name: "Ветеринар Михаил"
+    },
+    npc_petshop: {
+        name: "Продавец питомцев"
+    },
+    npc_zdobich: {
+        name: "Виталий Дебич"
+    },
+    npc_rieltor: {
+        name: "Илон Таск"
+    },
+    npc_furniture: {
+        name: "Иван"
+    },
+    npc_carevac: {
+        name: "Роберт"
+    },
+    npc_airshop: {
+        name: "Продавец воздушного транспорта"
+    },
+    npc_eliteroom: {
+        name: "Продавец элитного транспорта"
+    },
+    npc_automechanic: {
+        name: "Главный механик"
+    },
+    npc_bus: {
+        name: "Начальник автоколонны"
+    },
+    npc_collector: {
+        name: "Банковский HR"
+    },
+    npc_electrician: {
+        name: "Старший электрик"
+    },
+    npc_gopostal: {
+        name: "Старший почтальон"
+    },
+    npc_lawnmower: {
+        name: "Главный газонокосильщик"
+    },
+    npc_taxi: {
+        name: "Директор таксопарка"
+    },
+    npc_truckers: {
+        name: "Водитель-дальнобойщик"
+    },
+    npc_org: {
+        name: "Директор Полли"
+    },
+    npc_birthday: {
+        name: "Праздничная обезьянка"
+    },
+}
+
+const getQuests = () => {
+    return questsnpc_tailerJsonJson;
+}
+
+const getQuest = (name, questId) => {
+    return list[name][questId];
+}
+
+const getActors = (name) => {
+    return actorData[name];
+}
+
+/***/ }),
+
+/***/ "./src/json/quests/work/npc_automechanic.json":
+/*!****************************************************!*\
+  !*** ./src/json/quests/work/npc_automechanic.json ***!
+  \****************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse("{\"0\":{\"buttons\":[{\"name\":\"Устроиться на работу.\",\"type\":\"perform\"},{\"name\":\"Арендовать рабочее авто.\",\"type\":\"action\"},{\"name\":\"Неинтересно.\"}],\"text\":\"Привет!\",\"sound\":\"cloud/npc/hunt/hunter1.ogg\"}}");
+
+/***/ }),
+
+/***/ "./src/json/quests/work/npc_bus.json":
+/*!*******************************************!*\
+  !*** ./src/json/quests/work/npc_bus.json ***!
+  \*******************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse("{\"0\":{\"buttons\":[{\"name\":\"Устроиться на работу.\",\"type\":\"perform\"},{\"name\":\"Арендовать рабочее авто.\",\"type\":\"action\"},{\"name\":\"Неинтересно.\"}],\"text\":\"Привет!\",\"sound\":\"cloud/npc/hunt/hunter1.ogg\"}}");
+
+/***/ }),
+
+/***/ "./src/json/quests/work/npc_collector.json":
+/*!*************************************************!*\
+  !*** ./src/json/quests/work/npc_collector.json ***!
+  \*************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse("{\"0\":{\"buttons\":[{\"name\":\"Устроиться на работу.\",\"type\":\"perform\"},{\"name\":\"Арендовать рабочее авто.\",\"type\":\"action\"},{\"name\":\"Неинтересно.\"}],\"text\":\"Привет!\",\"sound\":\"cloud/npc/hunt/hunter1.ogg\"}}");
+
+/***/ }),
+
+/***/ "./src/json/quests/work/npc_electrician.json":
+/*!***************************************************!*\
+  !*** ./src/json/quests/work/npc_electrician.json ***!
+  \***************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse("{\"0\":{\"buttons\":[{\"name\":\"Устроиться на работу.\",\"type\":\"perform\"},{\"name\":\"Арендовать рабочее авто.\",\"type\":\"action\"},{\"name\":\"Неинтересно.\"}],\"text\":\"Привет!\",\"sound\":\"cloud/npc/hunt/hunter1.ogg\"}}");
+
+/***/ }),
+
+/***/ "./src/json/quests/work/npc_gopostal.json":
+/*!************************************************!*\
+  !*** ./src/json/quests/work/npc_gopostal.json ***!
+  \************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse("{\"0\":{\"buttons\":[{\"name\":\"Устроиться на работу.\",\"type\":\"perform\"},{\"name\":\"Арендовать рабочее авто.\",\"type\":\"action\"},{\"name\":\"Неинтересно.\"}],\"text\":\"Привет!\",\"sound\":\"cloud/npc/hunt/hunter1.ogg\"}}");
+
+/***/ }),
+
+/***/ "./src/json/quests/work/npc_lawnmower.json":
+/*!*************************************************!*\
+  !*** ./src/json/quests/work/npc_lawnmower.json ***!
+  \*************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse("{\"0\":{\"buttons\":[{\"name\":\"Устроиться на работу.\",\"type\":\"perform\"},{\"name\":\"Арендовать рабочее авто.\",\"type\":\"action\"},{\"name\":\"Неинтересно.\"}],\"text\":\"Привет!\",\"sound\":\"cloud/npc/hunt/hunter1.ogg\"}}");
+
+/***/ }),
+
+/***/ "./src/json/quests/work/npc_taxi.json":
+/*!********************************************!*\
+  !*** ./src/json/quests/work/npc_taxi.json ***!
+  \********************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse("{\"0\":{\"buttons\":[{\"name\":\"Устроиться на работу.\",\"type\":\"perform\"},{\"name\":\"Арендовать рабочее авто.\",\"type\":\"action\"},{\"name\":\"Неинтересно.\"}],\"text\":\"Привет!\",\"sound\":\"cloud/npc/hunt/hunter1.ogg\"}}");
+
+/***/ }),
+
+/***/ "./src/json/quests/work/npc_truckers.json":
+/*!************************************************!*\
+  !*** ./src/json/quests/work/npc_truckers.json ***!
+  \************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse("{\"0\":{\"buttons\":[{\"name\":\"Устроиться на работу.\",\"type\":\"perform\"},{\"name\":\"Арендовать рабочее авто.\",\"type\":\"action\"},{\"name\":\"Неинтересно.\"}],\"text\":\"Привет!\",\"sound\":\"cloud/npc/hunt/hunter1.ogg\"}}");
+
+/***/ }),
+
+/***/ "./src/json/realEstate.js":
+/*!********************************!*\
+  !*** ./src/json/realEstate.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "houseType": () => (/* binding */ houseType),
+/* harmony export */   "businessType": () => (/* binding */ businessType)
+/* harmony export */ });
+const houseType = [
+    "Трейлер",
+    "Эконом",
+    "Эконом+",
+    "Комфорт",
+    "Комфорт+",
+    "Премиум",
+    "Премиум+",
+    "Парковка",
+    "Премиум++",
+    "Люкс",
+]
+
+const businessType = [
+    "24/7", // 0
+    "Petrol Station",
+    "Premium Autoroom",
+    "Luxor Autoroom",
+    "Low Autoroom",
+    "Motoroom",
+    "Gun shop",
+    "Clothes Shop",
+    "Burger-Shot",
+    "Tattoo-salon",
+    "Barber-Shop",
+    "Masks Shop",
+    "LS Customs",
+    "CarWash",
+    "PetShop",
+    "Elite Autoroom", // 15
+]
+
+/***/ }),
+
+/***/ "./src/json/vehicles.js":
+/*!******************************!*\
+  !*** ./src/json/vehicles.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "vehicleModelsToMoto": () => (/* binding */ vehicleModelsToMoto),
+/* harmony export */   "colorData": () => (/* binding */ colorData)
+/* harmony export */ });
+const vehicleModelsToMoto = [
+    "akuma", "avarus", "bagger", "bati", "bati2", "bf400", "carbonrs",  "chimera", "cliffhanger",  "daemon", "daemon2", "defiler", "deathbike", "deathbike2", "deathbike3", "diablous", "diablous2", "double", "enduro", "esskey", "faggio", "faggio2", "faggio3", "fcr", "fcr2", "gargoyle", "hakuchou", "hakuchou2", "hexer", "innovation", "lectro", "manchez", "nemesis", "nightblade", "oppressor", "oppressor2", "pcj", "ratbike", "ruffian", "rrocket", "sanchez", "sanchez2", "sanctus", "shotaro", "sovereign", "stryder", "thrust", "vader", "vindicator", "vortex", "wolfsbane", "zombiea", "zombieb", "manchez2", "bmx", "cruiser", "fixter", "scorcher", "tribike", "tribike2", "tribike3", "fudocycle"
+]
+
+const colorData = [
+    "#0d1116",
+    "#1c1d21",
+    "#32383d",
+    "#454b4f",
+    "#999da0",
+    "#c2c4c6",
+    "#979a97",
+    "#637380",
+    "#63625c",
+    "#3c3f47",
+    "#444e54",
+    "#1d2129",
+    "#13181f",
+    "#26282a",
+    "#515554",
+    "#151921",
+    "#1e2429",
+    "#333a3c",
+    "#8c9095",
+    "#39434d",
+    "#506272",
+    "#1e232f",
+    "#363a3f",
+    "#a0a199",
+    "#d3d3d3",
+    "#b7bfca",
+    "#778794",
+    "#c00e1a",
+    "#da1918",
+    "#b6111b",
+    "#a51e23",
+    "#7b1a22",
+    "#8e1b1f",
+    "#6f1818",
+    "#49111d",
+    "#b60f25",
+    "#d44a17",
+    "#c2944f",
+    "#f78616",
+    "#cf1f21",
+    "#732021",
+    "#f27d20",
+    "#ffc91f",
+    "#9c1016",
+    "#de0f18",
+    "#8f1e17",
+    "#a94744",
+    "#b16c51",
+    "#371c25",
+    "#132428",
+    "#122e2b",
+    "#12383c",
+    "#31423f",
+    "#155c2d",
+    "#1b6770",
+    "#66b81f",
+    "#22383e",
+    "#1d5a3f",
+    "#2d423f",
+    "#45594b",
+    "#65867f",
+    "#222e46",
+    "#233155",
+    "#304c7e",
+    "#47578f",
+    "#637ba7",
+    "#394762",
+    "#d6e7f1",
+    "#76afbe",
+    "#345e72",
+    "#0b9cf1",
+    "#2f2d52",
+    "#282c4d",
+    "#2354a1",
+    "#6ea3c6",
+    "#112552",
+    "#1b203e",
+    "#275190",
+    "#608592",
+    "#2446a8",
+    "#4271e1",
+    "#3b39e0",
+    "#1f2852",
+    "#253aa7",
+    "#1c3551",
+    "#4c5f81",
+    "#58688e",
+    "#74b5d8",
+    "#ffcf20",
+    "#fbe212",
+    "#916532",
+    "#e0e13d",
+    "#98d223",
+    "#9b8c78",
+    "#503218",
+    "#473f2b",
+    "#221b19",
+    "#653f23",
+    "#775c3e",
+    "#ac9975",
+    "#6c6b4b",
+    "#402e2b",
+    "#a4965f",
+    "#46231a",
+    "#752b19",
+    "#bfae7b",
+    "#dfd5b2",
+    "#f7edd5",
+    "#3a2a1b",
+    "#785f33",
+    "#b5a079",
+    "#fffff6",
+    "#eaeaea",
+    "#b0ab94",
+    "#453831",
+    "#2a282b",
+    "#726c57",
+    "#6a747c",
+    "#354158",
+    "#9ba0a8",
+    "#5870a1",
+    "#eae6de",
+    "#dfddd0",
+    "#f2ad2e",
+    "#f9a458",
+    "#83c566",
+    "#f1cc40",
+    "#4cc3da",
+    "#4e6443",
+    "#bcac8f",
+    "#f8b658",
+    "#fcf9f1",
+    "#fffffb",
+    "#81844c",
+    "#ffffff",
+    "#f21f99",
+    "#fdd6cd",
+    "#df5891",
+    "#f6ae20",
+    "#b0ee6e",
+    "#08e9fa",
+    "#0a0c17",
+    "#0c0d18",
+    "#0e0d14",
+    "#9f9e8a",
+    "#621276",
+    "#0b1421",
+    "#11141a",
+    "#6b1f7b",
+    "#1e1d22",
+    "#bc1917",
+    "#2d362a",
+    "#696748",
+    "#7a6c55",
+    "#c3b492",
+    "#5a6352",
+    "#81827f",
+    "#afd6e4",
+    "#7a6440",
+    "#7f6a48",
+]
+
+/***/ }),
+
+/***/ "./src/json/vipinfo.js":
+/*!*****************************!*\
+  !*** ./src/json/vipinfo.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([
+    "Игрок",
+    "Silver VIP",
+    "Gold VIP",
+    "Platinum VIP",
+    "Diamond VIP",
+    "Media VIP",
+]);
+
+/***/ }),
+
+/***/ "./src/main.js":
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _App_svelte__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.svelte */ "./src/App.svelte");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var moment_duration_format__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment-duration-format */ "./node_modules/moment-duration-format/lib/moment-duration-format.js");
+/* harmony import */ var moment_duration_format__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment_duration_format__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+moment_duration_format__WEBPACK_IMPORTED_MODULE_2___default()((moment__WEBPACK_IMPORTED_MODULE_1___default()))
+
+window.wait = time => new Promise(resolve => setTimeout(resolve, time))
+
+moment__WEBPACK_IMPORTED_MODULE_1___default().locale('ru');
+
+//console.log(TimeFormat ("2021-08-17T00:44:10.8644836+03:00", "H:M DD.MM.YYYY"))
+//console.log(TimeFormat ("8/18/2021 12:34:38 AM", "H:M DD.MM.YYYY"))
+const app = new _App_svelte__WEBPACK_IMPORTED_MODULE_0__.default({
+	target: document.body,
+});
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (app);
+
+/***/ }),
+
+/***/ "./src/popups/war/data.js":
+/*!********************************!*\
+  !*** ./src/popups/war/data.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "typeBattle": () => (/* binding */ typeBattle),
+/* harmony export */   "composition": () => (/* binding */ composition),
+/* harmony export */   "weaponsCategory": () => (/* binding */ weaponsCategory)
+/* harmony export */ });
+
+const typeBattle = [
+    "Больше убийств",
+    "Больше очков",
+    "Удержание территории",
+    "До последнего выжившего"
+]
+
+const composition = [
+    "Без ограничений",
+    "1x1",
+    "2x2",
+    "3x3",
+    "4x4",
+    "5x5",
+    "6x6",
+    "7x7",
+    "8x8",
+    "9x9",
+    "10x10"
+]
+
+const weaponsCategory = [
+    'Без ограничений',
+    'Ближний бой',
+    'Пистолеты',
+    'Дробовики',
+    'Пистолеты пулеметы',
+    'Штурмовые винтовки',
+    'Снайперские винтовки'
+];
+
+/***/ }),
+
+/***/ "./src/router/index.js":
+/*!*****************************!*\
+  !*** ./src/router/index.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+
+
+function routerStore() {
+
+    let state = {
+        popup: "",
+        popupData: null,
+        popupFunc: null,
+        view: "PlayerAuthentication",
+        viewData: null,
+        PlayerGameMenu: false,
+        PlayerHud: false,
+        opacity: 1
+    };
+
+    const { subscribe, set, update } = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(state);
+    
+    window.router = {
+        setView: (page, data = null) => {
+            state = {
+                popup: "",
+                popupData: null,
+                view: page,
+                viewData: data,
+                PlayerGameMenu: false,
+                PlayerHud: false,
+                opacity: 1
+            }
+            set(state);
+        },
+        setViewData: (data = null) => {
+            state.viewData = data;
+            set(state);
+        },
+        addViewData: (data = null) => {
+            state.viewData = {
+                ...state.viewData,
+                ...data
+            };
+            set(state);
+        },
+        setPopUp: (page = "", data = null, func = null) => {
+            state.popup = page;
+            state.popupData = data;
+            state.popupFunc = func;
+            set(state);
+        },
+        setPopUpData: (data = null) => {
+            state.popupData = data;
+            set(state);
+        },
+        updateStatic: (page) => {
+            if(page === undefined || page === null) page = "";
+            state = {
+                popup: "",
+                popupData: null,
+                view: "",
+                viewData: null,
+                PlayerGameMenu: false,
+                PlayerHud: false,
+                opacity: 1
+            }
+            
+            if(page !== "") {
+                state[page] = true;
+            }
+
+            set(state);
+        },
+        setHud: (page) => {
+            if (!page || page === state.view) {
+                state = {
+                    popup: "",
+                    popupData: null,
+                    view: "",
+                    viewData: null,
+                    PlayerGameMenu: false,
+                    PlayerHud: true,
+                    opacity: 1
+                }
+                set(state);
+            }
+        },
+        close: () => {
+            state = {
+                popup: "",
+                popupData: null,
+                view: "",
+                viewData: null,
+                PlayerGameMenu: false,
+                PlayerHud: false,
+                opacity: 1
+            }
+            set(state);
+        },
+        opacity: (opacity) => {
+            state.opacity = opacity;
+            set(state);
+        }
+    }
+
+	return {
+		subscribe
+	};
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (routerStore());
+
+/***/ }),
+
+/***/ "./src/store/account.js":
+/*!******************************!*\
+  !*** ./src/store/account.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "accountData": () => (/* binding */ accountData),
+/* harmony export */   "otherStatsData": () => (/* binding */ otherStatsData),
+/* harmony export */   "accountRedbucks": () => (/* binding */ accountRedbucks),
+/* harmony export */   "accountUnique": () => (/* binding */ accountUnique),
+/* harmony export */   "accountVip": () => (/* binding */ accountVip),
+/* harmony export */   "accountVipDate": () => (/* binding */ accountVipDate),
+/* harmony export */   "accountSubscribe": () => (/* binding */ accountSubscribe),
+/* harmony export */   "accountLogin": () => (/* binding */ accountLogin),
+/* harmony export */   "accountSocialClub": () => (/* binding */ accountSocialClub),
+/* harmony export */   "accountSelectCharId": () => (/* binding */ accountSelectCharId),
+/* harmony export */   "accountIsSession": () => (/* binding */ accountIsSession),
+/* harmony export */   "accountEmail": () => (/* binding */ accountEmail)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+
+
+window.accountStore = {};
+
+const accountData = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(JSON.parse('{"Login":"sokolyansky","SocialClub":"Jonatan_Keri","Redbucks":0,"Vip":0,"VipDate":"2021-08-15T23:17:56","Unique":"packages_9_0","LastSelectCharUUID":0,"Subscribe":false,"charsSlot":[-1,-1,-2,-2,-2,-2,-2,-2,-2],"chars":{}}'));
+//export const accountData = writable({});
+window.accountStore.accountData = (value) => {
+    value = JSON.parse (value);
+    accountData.set (value);
+}
+
+let localAccountData = {};
+accountData.subscribe(value => {
+	localAccountData = value;
+}); 
+
+window.accountStore.unlockSlots = (slotId) => {
+    localAccountData.charsSlot[slotId] = -1;
+    accountData.set(localAccountData);
+}
+
+window.accountStore.deleteCharacter = (slot, data) => {
+    const uuid = localAccountData.charsSlot[slot];
+    localAccountData.chars[uuid].Data.DeleteData = data;
+    accountData.set(localAccountData);
+}
+
+window.accountStore.deleteSuccessCharacter = (slot) => {
+    const uuid = localAccountData.charsSlot[slot];
+    localAccountData.charsSlot[slot] = -1;
+    localAccountData.chars[uuid] = null;
+    delete localAccountData.chars[uuid];
+    accountData.set(localAccountData);
+}
+
+///
+
+const otherStatsData = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)({});
+window.accountStore.otherStatsData = (json) => otherStatsData.set (JSON.parse (json));
+
+const accountRedbucks = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.accountStore.accountRedbucks = (value) => accountRedbucks.set (value);
+
+const accountUnique = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)("");
+window.accountStore.accountUnique = (value) => accountUnique.set (value);
+
+const accountVip = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.accountStore.accountVip = (value) => accountVip.set (value);
+
+const accountVipDate = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)("2021-05-29T22:16:04");
+window.accountStore.accountVipDate = (value) => accountVipDate.set (value);
+
+const accountSubscribe = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)("false");
+window.accountStore.accountSubscribe = (value) => accountSubscribe.set (value);
+
+//
+const accountLogin = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(-99);
+window.accountStore.accountLogin = (value) => accountLogin.set (value);
+
+const accountSocialClub = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.accountStore.accountSocialClub = (value) => accountSocialClub.set (value);
+
+const accountSelectCharId = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.accountStore.accountSelectCharId = (value) => accountSelectCharId.set (value);
+
+const accountIsSession = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.accountStore.accountIsSession = (value) => accountIsSession.set (value);
+
+const accountEmail = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)("");
+window.accountStore.accountEmail = (value) => accountEmail.set (value);
+
+
+
+/***/ }),
+
+/***/ "./src/store/animation.js":
+/*!********************************!*\
+  !*** ./src/store/animation.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "storeAnimFavorites": () => (/* binding */ storeAnimFavorites),
+/* harmony export */   "storeAnimBind": () => (/* binding */ storeAnimBind)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+/* harmony import */ var api_rage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! api/rage */ "./src/api/rage.js");
+
+
+
+window.animationStore = {};
+
+//Анимации
+const storeAnimFavorites = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)([]);
+let animFavorites = [];
+storeAnimFavorites.subscribe(value => {
+	animFavorites = value;
+}); 
+
+window.animationStore.initAnimFavorites = (json) => {
+    storeAnimFavorites.set (JSON.parse (json));
+}
+
+window.animationStore.addAnimFavorite = (anim) => {   
+    if (!animFavorites) animFavorites = [];
+    const listIndex = animFavorites.findIndex(a => a == anim);
+    if (!animFavorites [listIndex]) {
+        animFavorites = [
+            ...animFavorites,
+            anim
+        ];
+        (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient) ("client.animation.favorite", JSON.stringify (animFavorites));
+        storeAnimFavorites.set(animFavorites);
+    }            
+}
+
+window.animationStore.dellAnimFavorite = (anim) => {
+    if (!animFavorites) animFavorites = [];
+    const listIndex = animFavorites.findIndex(a => a == anim);
+    if (animFavorites [listIndex]) {
+        animFavorites.splice(listIndex, 1);
+        (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient) ("client.animation.favorite", JSON.stringify (animFavorites));
+        storeAnimFavorites.set(animFavorites);
+    }           
+}
+
+const storeAnimBind = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)([0,0,0,0,0,0,0,0,0,0]);
+let animBind = [0,0,0,0,0,0,0,0,0,0];
+storeAnimBind.subscribe(value => {
+	animBind = value;
+}); 
+
+
+window.animationStore.initAnimBind = (json) => {
+    storeAnimBind.set (JSON.parse (json));
+}
+
+window.animationStore.addAnimBind = (index, anim) => {
+    if (!animBind) animBind = [];                
+    const listIndex = animBind.findIndex(a => a == anim);
+    if (animBind [listIndex]) animBind [listIndex] = 0;            
+    animBind [index] = anim;
+    (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient) ("client.animation.bind", JSON.stringify (animBind));
+    storeAnimBind.set(animBind);         
+}
+
+window.animationStore.dellAnimBind = (anim) => {
+    if (!animBind) animBind = [];                
+    const listIndex = animBind.findIndex(a => a == anim);
+    if (animBind [listIndex]) animBind [listIndex] = 0;
+    (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient) ("client.animation.bind", JSON.stringify (animBind));
+    storeAnimBind.set(animBind);         
+}
+
+/***/ }),
+
+/***/ "./src/store/chars.js":
+/*!****************************!*\
+  !*** ./src/store/chars.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "charData": () => (/* binding */ charData),
+/* harmony export */   "charUUID": () => (/* binding */ charUUID),
+/* harmony export */   "charName": () => (/* binding */ charName),
+/* harmony export */   "charGender": () => (/* binding */ charGender),
+/* harmony export */   "charMoney": () => (/* binding */ charMoney),
+/* harmony export */   "charBankMoney": () => (/* binding */ charBankMoney),
+/* harmony export */   "charWorkID": () => (/* binding */ charWorkID),
+/* harmony export */   "charIsLeader": () => (/* binding */ charIsLeader),
+/* harmony export */   "charFractionID": () => (/* binding */ charFractionID),
+/* harmony export */   "charFractionLVL": () => (/* binding */ charFractionLVL),
+/* harmony export */   "charOrganizationID": () => (/* binding */ charOrganizationID),
+/* harmony export */   "charEXP": () => (/* binding */ charEXP),
+/* harmony export */   "charLVL": () => (/* binding */ charLVL),
+/* harmony export */   "charWanted": () => (/* binding */ charWanted),
+/* harmony export */   "charIsPet": () => (/* binding */ charIsPet),
+/* harmony export */   "charCreateDate": () => (/* binding */ charCreateDate),
+/* harmony export */   "isOrgTable": () => (/* binding */ isOrgTable),
+/* harmony export */   "charSim": () => (/* binding */ charSim)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+
+
+window.charStore = {};
+
+const charData = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)({
+    UUID: 0,
+    CreateDate: 0,
+    Name: "Nikita",
+    Gender: true,
+    LVL: 1,
+    EXP: 1,
+    Vip: "123",
+    Status: 0,//Status
+    Sim: 0,
+    Work: 0,
+    Lic: [1,0,0,0,0,0,0,0,0],
+
+    Warns: 0,
+
+    Money: 0,
+
+    Bank: 0,
+    BankMoney: 0,
+
+    Fraction: 1,
+    FractionLVL: 6,
+
+    HouseId: 0,
+    HouseCash: 0,
+    HouseCopiesHour: 0,
+    HousePaid: 0,
+    HouseType: 0,
+    MaxCars: 0,
+
+    BizId: 0,
+    BizCash: 0,
+    BizCopiesHour: 0,
+    BizPaid: 0,
+
+    Time: {
+        TotalTime: 0,
+        Day: 0,
+        TodayTime: 0,
+        Month: 0,
+        MonthTime: 0,
+        Year: 0,
+        YearTime: 0,
+    },
+
+    Kills: 0,
+    Deaths: 0,
+    EarnedMoney: 0,
+    EatTimes: 0,
+    Revived: 0,
+    Handshaked: 0,
+
+    IsLeader: false,
+
+    IsMute: false,
+    WeddingName: "Source",
+    Licenses: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+    JobsSkills: [
+        {
+            name: "Электрик",
+            max: 15000,
+            nextLevel: 1000,
+            currentLevel: 0,
+            current: 0
+        },
+        {
+            name: "Газонокосильщик",
+            max: 40000,
+            nextLevel: 1000,
+            currentLevel: 0,
+            current: 0
+        },
+        {
+            name: "Почтальон",
+            max: 4000,
+            nextLevel: 1000,
+            currentLevel: 0,
+            current: 0
+        },
+        {
+            name: "Таксист",
+            max: 1000,
+            nextLevel: 5000,
+            currentLevel: 0,
+            current: 0
+        },
+        {
+            name: "Водитель автобуса",
+            max: 70000,
+            nextLevel: 1000,
+            currentLevel: 0,
+            current: 0
+        },
+        {
+            name: "Автомеханик",
+            max: 250,
+            nextLevel: 100,
+            currentLevel: 0,
+            current: 0
+        },
+        {
+            name: "Дальнобойщик",
+            max: 700,
+            nextLevel: 500,
+            currentLevel: 0,
+            current: 0
+        },
+        {
+            name: "Инкассатор",
+            max: 3000,
+            nextLevel: 1000,
+            currentLevel: 0,
+            current: 0
+        }
+    ]
+});
+window.charStore.charData = (value) => {
+    value = JSON.parse (value);
+    charData.set (value);
+}
+let localCharData = {};
+charData.subscribe(value => {
+	localCharData = value;
+}); 
+
+window.charStore.updateNameWithJSON = (name, value) => {    
+    value = JSON.parse (value);
+    if (localCharData[name] === value) return;
+    localCharData[name] = value;
+    charData.set (localCharData);
+}
+
+const charUUID = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.charStore.charUUID = (value) => charUUID.set (value);
+
+const charName = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)("");
+window.charStore.charName = (value) => charName.set (value);
+
+const charGender = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+window.charStore.charGender = (value) => charGender.set (value);
+
+const charMoney = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.charStore.charMoney = (value) => charMoney.set (value);
+
+const charBankMoney = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.charStore.charBankMoney = (value) => charBankMoney.set (value);
+
+const charWorkID = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.charStore.charWorkID = (value) => charWorkID.set (value);
+
+const charIsLeader = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+window.charStore.charIsLeader = (value) => charIsLeader.set (value);
+
+const charFractionID = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.charStore.charFractionID = (value) => charFractionID.set (value);
+
+const charFractionLVL = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.charStore.charFractionLVL = (value) => charFractionLVL.set (value);
+
+const charOrganizationID = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.charStore.charOrganizationID = (value) => charOrganizationID.set (value);
+
+const charEXP = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(1);
+window.charStore.charEXP = (value) => charEXP.set (value);
+
+const charLVL = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(1);
+window.charStore.charLVL = (value) => charLVL.set (value);
+
+const charWanted = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.charStore.charWanted = (value) => charWanted.set (value);
+
+const charIsPet = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+window.charStore.charIsPet = (value) => charIsPet.set (value);
+
+const charCreateDate = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)("");
+window.charStore.charCreateDate = (value) => charCreateDate.set (value);
+
+const isOrgTable = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+window.charStore.isOrgTable = (value) => isOrgTable.set (value);
+
+const charSim = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(-1);
+window.charStore.charSim = (value) => charSim.set (value);
+
+/***/ }),
+
+/***/ "./src/store/customization.js":
+/*!************************************!*\
+  !*** ./src/store/customization.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "customization": () => (/* binding */ customization),
+/* harmony export */   "gender": () => (/* binding */ gender),
+/* harmony export */   "updateIndex": () => (/* binding */ updateIndex),
+/* harmony export */   "updateGender": () => (/* binding */ updateGender),
+/* harmony export */   "initCustom": () => (/* binding */ initCustom),
+/* harmony export */   "updateParents": () => (/* binding */ updateParents),
+/* harmony export */   "updateShapeMix": () => (/* binding */ updateShapeMix),
+/* harmony export */   "updateSkinTone": () => (/* binding */ updateSkinTone),
+/* harmony export */   "updateCharacteristic": () => (/* binding */ updateCharacteristic),
+/* harmony export */   "updateAppearance": () => (/* binding */ updateAppearance),
+/* harmony export */   "updateClothes": () => (/* binding */ updateClothes),
+/* harmony export */   "FirstName": () => (/* binding */ FirstName),
+/* harmony export */   "updateFirstName": () => (/* binding */ updateFirstName),
+/* harmony export */   "LastName": () => (/* binding */ LastName),
+/* harmony export */   "updateLastName": () => (/* binding */ updateLastName)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+/* harmony import */ var api_rage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! api/rage */ "./src/api/rage.js");
+/* harmony import */ var store_account__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! store/account */ "./src/store/account.js");
+/* harmony import */ var _views_player_newauthentication_chars_create_elements_appearance_appearances_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/views/player/newauthentication/chars/create/elements/appearance/appearances.js */ "./src/views/player/newauthentication/chars/create/elements/appearance/appearances.js");
+/* harmony import */ var _views_player_newauthentication_chars_create_elements_info_parents_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/views/player/newauthentication/chars/create/elements/info/parents.js */ "./src/views/player/newauthentication/chars/create/elements/info/parents.js");
+/* harmony import */ var _views_player_newauthentication_chars_create_elements_characteristics_indexes_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/views/player/newauthentication/chars/create/elements/characteristics/indexes.js */ "./src/views/player/newauthentication/chars/create/elements/characteristics/indexes.js");
+/* harmony import */ var _views_player_newauthentication_chars_create_elements_clothes_clothes_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/views/player/newauthentication/chars/create/elements/clothes/clothes.js */ "./src/views/player/newauthentication/chars/create/elements/clothes/clothes.js");
+/* harmony import */ var _random_index_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./random/index.js */ "./src/store/random/index.js");
+
+
+ 
+
+
+
+
+
+
+
+
+
+const defaultData = {
+    gender: true,
+    false: {},
+    true: {},
+};
+
+const maxSlots = 3;//Максимальное колличество чаров
+
+let selectIndex = 0;//Выбранный чар
+const customizations = new Array (maxSlots).fill (defaultData);//Локальные данные
+
+let init = false;
+
+const customization = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)({});
+const gender = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(true);
+
+
+const updateCustomizationData = () => {
+    if (!init)
+        return;
+    const gender = customizations[selectIndex].gender;
+    customization.set (customizations[selectIndex][gender])
+}
+
+const updateName = () => {
+    if (!init)
+        return;
+    const gender = customizations[selectIndex].gender;
+    FirstName.set (customizations[selectIndex][gender].FirstName);
+    LastName.set (customizations[selectIndex][gender].LastName);
+}
+
+let chars = [];
+store_account__WEBPACK_IMPORTED_MODULE_2__.accountData.subscribe(value => {
+	if (value.charsSlot)
+        chars = value.charsSlot;
+});
+
+const updateIndex = index => {
+    //if (selectIndex === index)
+    //    return;
+    selectIndex = index;
+    (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.updateIndex", index);
+    const char = chars [index];
+    if (char === -1) {
+        updateCustomizationData();
+        updateName();
+    }
+}
+
+const updateGender = async (index, newgender) => {
+    if (index !== selectIndex)
+        return;
+    customizations[selectIndex].gender = newgender;
+    (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateGender", newgender);
+    gender.set (newgender);
+    updateCustomizationData();
+    updateName();
+    await window.wait(50);
+    initCustom (selectIndex);
+}
+
+const initCustom = (index) => {
+    if (!init)
+        return;
+    const gender = customizations[index].gender;
+    const data = customizations[index][gender];
+    (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateParents", gender, _views_player_newauthentication_chars_create_elements_info_parents_js__WEBPACK_IMPORTED_MODULE_4__.default.false[data.motherId].gtaId, _views_player_newauthentication_chars_create_elements_info_parents_js__WEBPACK_IMPORTED_MODULE_4__.default.true[data.fatherId].gtaId);
+    (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateShapeMix", gender, data.shapeMix);
+    (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateSkinTone", gender, data.skinTone);
+    for (let key in data) {
+        const element = data [key];
+        if (element != undefined && element.preset != undefined && _views_player_newauthentication_chars_create_elements_characteristics_indexes_js__WEBPACK_IMPORTED_MODULE_5__.default[key] != undefined) {
+            const indexes = _views_player_newauthentication_chars_create_elements_characteristics_indexes_js__WEBPACK_IMPORTED_MODULE_5__.default[key];
+            (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateCharacteristic", gender, indexes.xindex, element.x, indexes.yindex, element.y);
+        } else if (element != undefined && element.color != undefined && element.opacity != undefined) {
+            let appearance = Array.isArray(_views_player_newauthentication_chars_create_elements_appearance_appearances_js__WEBPACK_IMPORTED_MODULE_3__.default[key]) ? _views_player_newauthentication_chars_create_elements_appearance_appearances_js__WEBPACK_IMPORTED_MODULE_3__.default[key] : _views_player_newauthentication_chars_create_elements_appearance_appearances_js__WEBPACK_IMPORTED_MODULE_3__.default[key][gender];
+            (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateAppearance", gender, key, appearance[element.id].id, element.color, element.opacity);
+        } else if (["head", "tops", "legs", "shoes"].includes (key)) {            
+            let cloth = _views_player_newauthentication_chars_create_elements_clothes_clothes_js__WEBPACK_IMPORTED_MODULE_6__.default[gender][key][element];
+            (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateClothes", gender, key, cloth.drawable, cloth.texture);
+        }
+    }
+}
+
+const updateParents = (gender, mother, father) => {
+    customizations[selectIndex][gender].motherId = mother;
+    customizations[selectIndex][gender].fatherId = father;
+    if (init)
+        (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateParents", gender, _views_player_newauthentication_chars_create_elements_info_parents_js__WEBPACK_IMPORTED_MODULE_4__.default.false[mother].gtaId, _views_player_newauthentication_chars_create_elements_info_parents_js__WEBPACK_IMPORTED_MODULE_4__.default.true[father].gtaId);
+    updateCustomizationData();
+}
+
+const updateShapeMix = (gender, shapemix) => {
+    customizations[selectIndex][gender].shapeMix = shapemix;
+    (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateShapeMix", gender, shapemix);
+    updateCustomizationData();
+}
+
+const updateSkinTone = (gender, skintone) => {
+    customizations[selectIndex][gender].skinTone = skintone;
+    (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateSkinTone", gender, skintone);
+    updateCustomizationData();
+}
+
+const updateCharacteristic = (gender, key, preset, xvalue, yvalue) => {
+    customizations[selectIndex][gender][key] = { preset: preset, x: xvalue, y: yvalue };
+    const indexes = _views_player_newauthentication_chars_create_elements_characteristics_indexes_js__WEBPACK_IMPORTED_MODULE_5__.default[key];
+
+    if (init)
+        (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateCharacteristic", gender, indexes.xindex, xvalue, indexes.yindex, yvalue);
+
+    updateCustomizationData();
+}
+
+const updateAppearance = (gender, key, id, color, opacity) => {
+    customizations[selectIndex][gender][key] = { id: id, color: color, opacity: opacity };
+    let appearance = Array.isArray(_views_player_newauthentication_chars_create_elements_appearance_appearances_js__WEBPACK_IMPORTED_MODULE_3__.default[key]) ? _views_player_newauthentication_chars_create_elements_appearance_appearances_js__WEBPACK_IMPORTED_MODULE_3__.default[key] : _views_player_newauthentication_chars_create_elements_appearance_appearances_js__WEBPACK_IMPORTED_MODULE_3__.default[key][gender];
+
+    if (init)
+        (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateAppearance", gender, key, appearance[id].id, color, opacity);
+
+    updateCustomizationData();
+}
+
+const updateClothes = (gender, key, newcloth) => {
+    customizations[selectIndex][gender][key] = newcloth;
+    let cloth = _views_player_newauthentication_chars_create_elements_clothes_clothes_js__WEBPACK_IMPORTED_MODULE_6__.default[gender][key][newcloth];
+
+    if (init)
+        (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.customization.UpdateClothes", gender, key, cloth.drawable, cloth.texture);
+
+    updateCustomizationData();
+}
+
+const FirstName = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)("");
+const updateFirstName = (value) => {
+    const gender = customizations[selectIndex].gender;
+    customizations[selectIndex][gender].FirstName = value;
+    updateName();
+}
+
+const LastName = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)("");
+const updateLastName = (value) => {
+    const gender = customizations[selectIndex].gender;
+    customizations[selectIndex][gender].LastName = value;
+    updateName();
+}
+
+window.initCustomizations = async () => {
+    for (let i = 0; i < maxSlots; i++) {
+        if (chars [i] <= -1) {
+            updateIndex (i);
+            (0,_random_index_js__WEBPACK_IMPORTED_MODULE_7__.default) (false);
+            (0,_random_index_js__WEBPACK_IMPORTED_MODULE_7__.default) (true);
+            updateGender (true);
+        }
+    }
+    
+    init = true;
+
+    await window.wait(50);
+    
+    for (let i = 0; i < maxSlots; i++) {
+        if (chars [i] <= -1) {
+            updateIndex (i);
+            await window.wait(50);
+            initCustom (i);
+            await window.wait(50);
+        }
+    }
+
+    await window.wait(100);
+    
+    updateGender (true);
+
+    (0,api_rage__WEBPACK_IMPORTED_MODULE_1__.executeClient)("client.characters.initChars");
+}
+
+/***/ }),
+
+/***/ "./src/store/hud.js":
+/*!**************************!*\
+  !*** ./src/store/hud.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "isPlayer": () => (/* binding */ isPlayer),
+/* harmony export */   "isHelp": () => (/* binding */ isHelp),
+/* harmony export */   "isWaterMark": () => (/* binding */ isWaterMark),
+/* harmony export */   "isInputToggled": () => (/* binding */ isInputToggled),
+/* harmony export */   "isPhone": () => (/* binding */ isPhone),
+/* harmony export */   "inVehicle": () => (/* binding */ inVehicle)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+
+
+window.hudStore = {};
+
+const isPlayer = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(true);
+window.hudStore.isPlayer = (value) => isPlayer.set (value);
+
+const isHelp = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(true);
+window.hudStore.isHelp = (value) => isHelp.set (value);
+
+const isWaterMark = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(true);
+window.hudStore.isWaterMark = (value) => isWaterMark.set (value);
+
+const isInputToggled = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+window.hudStore.isInputToggled = (value) => {
+    isInputToggled.set (value);
+    
+    if (mp)
+        mp.invoke('setTypingInChatState', value);
+}
+
+const isPhone = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+window.hudStore.isPhone = (value) => isPhone.set (value);
+
+const inVehicle = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+window.hudStore.inVehicle = (value) => inVehicle.set (value);
+
+/***/ }),
+
+/***/ "./src/store/keys.js":
+/*!***************************!*\
+  !*** ./src/store/keys.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+
+
+const _keysDataStore = () => {
+
+    let state = {}
+    for(let i = 0; i < 100; i++) {
+        state[i] = 85;
+    }
+    const { subscribe, set } = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(state);
+    
+    window.keysStore = {
+        updateName: (name, value) => {
+            if (state[name] === value) return;
+            state[name] = value;
+            set(state);
+        },
+    }
+
+	return {
+		subscribe,
+        updateName: (name, value) => window.keysStore.updateName (name, value),
+	};
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_keysDataStore());
+
+/***/ }),
+
+/***/ "./src/store/loader.js":
+/*!*****************************!*\
+  !*** ./src/store/loader.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+
+
+
+function loaderStore() {
+
+    const disabledLoader = {
+        toggle: false
+    };
+
+    let state = {};
+
+    const { subscribe, set, update } = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(state);
+
+    window.loaderData = {
+        set: (name, toggle, onTimeout = null) => {
+            if (!state [name]) state [name] = disabledLoader;
+    
+            if(state[name].IntervalId) {
+                clearInterval(state[name].IntervalId);
+                state[name].IntervalId = null;
+            }
+    
+            let IntervalId = null;
+            if(toggle) {
+                IntervalId = setTimeout(() => {
+                    state[name] = {toggle: false, IntervalId: null};
+                    set(state);
+                    if(onTimeout !== null) onTimeout();
+                }, 10000);
+            }
+    
+            state[name] = {toggle: toggle, IntervalId: IntervalId};
+            set(state);
+        },
+        get: (name) => {
+            if (!state [name]) return disabledLoader;
+            return state [name];
+        },
+        delay: (name, timeSecond = 1, isMessage = true) => {
+            if (state[name] && state[name] > new Date().getTime()) {
+                if (isMessage) 
+                    window.notificationAdd(4, 9, `Попробуйте через ${Math.round ((state[name] - new Date().getTime()) / 1000)} секунд!`, 3000);
+                return false;
+            }                
+            state[name] = new Date().getTime() + (1000 * timeSecond);
+            set(state);
+            return true;
+        },
+        delayGet: (name) => {
+            if (!state[name])
+                return true;
+            if (state[name] > new Date().getTime()) {
+                window.notificationAdd(4, 9, `Попробуйте через ${Math.round ((state[name] - new Date().getTime()) / 1000)} секунд!`, 3000);
+                return false;
+            }
+            return true;
+        },
+
+    }
+
+	return {
+		subscribe,
+        init: () => window.loaderData (),
+	};
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loaderStore());
+
+/***/ }),
+
+/***/ "./src/store/news.js":
+/*!***************************!*\
+  !*** ./src/store/news.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "newsData": () => (/* binding */ newsData)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+
+
+const newsData = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)([]);
+
+/***/ }),
+
+/***/ "./src/store/quest.js":
+/*!****************************!*\
+  !*** ./src/store/quest.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "storeQuests": () => (/* binding */ storeQuests),
+/* harmony export */   "selectQuest": () => (/* binding */ selectQuest)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+
+
+window.questStore = {};
+
+const storeQuests = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)({});
+
+window.questStore.init = (json) => {
+    storeQuests.set (JSON.parse (json));
+}
+
+const selectQuest = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.questStore.selectQuest = (value) => selectQuest.set (value);
+
+/***/ }),
+
+/***/ "./src/store/random/index.js":
+/*!***********************************!*\
+  !*** ./src/store/random/index.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var store_customization__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! store/customization */ "./src/store/customization.js");
+/* harmony import */ var _views_player_newauthentication_chars_create_elements_appearance_appearances_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/views/player/newauthentication/chars/create/elements/appearance/appearances.js */ "./src/views/player/newauthentication/chars/create/elements/appearance/appearances.js");
+/* harmony import */ var _views_player_newauthentication_chars_create_elements_info_parents_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/views/player/newauthentication/chars/create/elements/info/parents.js */ "./src/views/player/newauthentication/chars/create/elements/info/parents.js");
+/* harmony import */ var _views_player_newauthentication_chars_create_elements_characteristics_characteristics_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/views/player/newauthentication/chars/create/elements/characteristics/characteristics.js */ "./src/views/player/newauthentication/chars/create/elements/characteristics/characteristics.js");
+/* harmony import */ var _views_player_newauthentication_chars_create_elements_clothes_clothes_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/views/player/newauthentication/chars/create/elements/clothes/clothes.js */ "./src/views/player/newauthentication/chars/create/elements/clothes/clothes.js");
+
+
+
+
+
+
+
+
+const randomHelper = (min, max) => { // min and max included 
+    return Math.floor(Math.random() * ((max - 1) - min + 1) + min);
+}
+
+const getShapeMix = (gender, newgeneration) => {
+    if (newgeneration)
+        return (gender) ? randomHelper(5, 10) : randomHelper(0, 5);
+    else
+        return (gender) ? 7 : 2;
+}
+
+const CreateNewCustomization = (gender, newgeneration = false) => {
+    store_customization__WEBPACK_IMPORTED_MODULE_0__.updateParents(gender, randomHelper(0, _views_player_newauthentication_chars_create_elements_info_parents_js__WEBPACK_IMPORTED_MODULE_2__.default.false.length - 1), randomHelper(0, _views_player_newauthentication_chars_create_elements_info_parents_js__WEBPACK_IMPORTED_MODULE_2__.default.true.length - 1));
+
+    //data.updateShapeMix(gender, getShapeMix(gender, newgeneration) / 10);
+    //data.updateSkinTone(gender, (newgeneration ? randomHelper(0, 10) : 5) / 10);
+
+    let characteristicsList = ["brow", "eyes", "nose", "noseprofile", "nosetip", "nosetip", "cbones", "cheeks", "lips", "jaw", "chinprofile", "chinform"];
+    for (let i = 0; i < characteristicsList.length; i++) {
+        let key = characteristicsList[i];
+        let preset = newgeneration ? randomHelper(0, 3) : 0;
+
+        store_customization__WEBPACK_IMPORTED_MODULE_0__.updateCharacteristic(gender, key, preset, _views_player_newauthentication_chars_create_elements_characteristics_characteristics_js__WEBPACK_IMPORTED_MODULE_3__.default[key][preset].x, _views_player_newauthentication_chars_create_elements_characteristics_characteristics_js__WEBPACK_IMPORTED_MODULE_3__.default[key][preset].y); 
+    }
+
+    const appearancesList = [
+        {
+            dataname: 'hair',
+            onlysex: "all",
+        },
+        {
+            dataname: 'eyebrows',
+            onlysex: "all",
+        },
+        {
+            dataname: 'facialhair',
+            onlysex: true,
+        },
+        {
+            dataname: 'blemishes',
+            onlysex: "all",
+        },
+        {
+            dataname: 'ageing',
+            onlysex: "all",
+        },
+        {
+            dataname: 'complexion',
+            onlysex: "all",
+        },
+        {
+            dataname: 'molesfreckles',
+            onlysex: "all",
+        },
+        {
+            dataname: 'sundamage',
+            onlysex: "all",
+        },
+        {
+            dataname: 'eyescolor',
+            onlysex: "all"
+        },
+        {
+            dataname: 'lipstick',
+            onlysex: false,
+        },
+    ];
+
+    appearancesList.forEach((component) => {
+        if (component.onlysex === "all" || component.onlysex === gender) {
+            let key = component.dataname;
+            let id = 0;
+    
+            const appearance = Array.isArray(_views_player_newauthentication_chars_create_elements_appearance_appearances_js__WEBPACK_IMPORTED_MODULE_1__.default[key]) ? _views_player_newauthentication_chars_create_elements_appearance_appearances_js__WEBPACK_IMPORTED_MODULE_1__.default[key] : _views_player_newauthentication_chars_create_elements_appearance_appearances_js__WEBPACK_IMPORTED_MODULE_1__.default[key][gender];
+            
+            if (key === "hair" || key === "eyebrows" || key === "facialhair" || key === "molesfreckles" || key === "eyescolor")
+                id = randomHelper(0, appearance.length);
+    
+            store_customization__WEBPACK_IMPORTED_MODULE_0__.updateAppearance(gender, key, id, 0, 100);
+        }
+    })
+
+    let clothesList = ["tops", "legs", "shoes"];
+    for (let i = 0; i < clothesList.length; i++) {
+        let key = clothesList[i];
+
+        store_customization__WEBPACK_IMPORTED_MODULE_0__.updateClothes(gender, key, randomHelper(0, _views_player_newauthentication_chars_create_elements_clothes_clothes_js__WEBPACK_IMPORTED_MODULE_4__.default[gender][key].length - 1));
+    }
+    store_customization__WEBPACK_IMPORTED_MODULE_0__.updateClothes(gender, "head", newgeneration ? randomHelper(0, _views_player_newauthentication_chars_create_elements_clothes_clothes_js__WEBPACK_IMPORTED_MODULE_4__.default[gender].head.length - 1) : 0);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CreateNewCustomization);
+
+/***/ }),
+
+/***/ "./src/store/server.js":
+/*!*****************************!*\
+  !*** ./src/store/server.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "serverId": () => (/* binding */ serverId),
+/* harmony export */   "serverDonatMultiplier": () => (/* binding */ serverDonatMultiplier),
+/* harmony export */   "serverDonateDoubleConvert": () => (/* binding */ serverDonateDoubleConvert),
+/* harmony export */   "serverDateTime": () => (/* binding */ serverDateTime),
+/* harmony export */   "isEvent": () => (/* binding */ isEvent)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+/* harmony import */ var api_moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! api/moment */ "./src/api/moment.js");
+/* harmony import */ var api_rage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! api/rage */ "./src/api/rage.js");
+
+
+
+
+window.serverStore = {};
+
+const serverId = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(0);
+window.serverStore.serverId = (value) => serverId.set (value);
+
+const serverDonatMultiplier = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(1);
+window.serverStore.serverDonatMultiplier = (value) => serverDonatMultiplier.set (value);
+
+const serverDonateDoubleConvert = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(1.5);
+window.serverStore.serverDonateDoubleConvert = (value) => serverDonateDoubleConvert.set (value);
+
+const serverDateTime = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(new Date().getTime());
+
+let localDateTime = "2021-08-17T00:44:10.8644836+03:00";
+window.serverStore.serverDateTime = (dateTime) => {
+    serverDateTime.set (dateTime);
+    localDateTime = dateTime;
+    
+    const moment = (0,api_moment__WEBPACK_IMPORTED_MODULE_1__.GetTime) (dateTime);
+
+    (0,api_rage__WEBPACK_IMPORTED_MODULE_2__.executeClient) ("SetTime", moment.hours(), moment.minutes(), moment.unix());
+}
+
+window.serverStore.getDateTime = () => {
+    return localDateTime;
+}
+
+const isEvent = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)(false);
+window.serverStore.isEvent = (value) => isEvent.set (value);
+
+/***/ }),
+
+/***/ "./src/store/settings.js":
+/*!*******************************!*\
+  !*** ./src/store/settings.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "storeSettings": () => (/* binding */ storeSettings)
+/* harmony export */ });
+/* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/store/index.mjs");
+
+
+window.settingsStore = {};
+
+const storeSettings = (0,svelte_store__WEBPACK_IMPORTED_MODULE_0__.writable)({
+    Timestamp: false, // 0
+    ChatShadow: true,
+    Fontsize: 16, // 16
+    Chatalpha: 100, // 0
+    Pagesize: 10, // 10
+    Widthsize: 50, // 50
+    Transition: 0, // 0
+    WalkStyle: 0, // 0
+    FacialEmotion: 0, // 0
+    Deaf: false, // 0
+    TagsHead: true, // 0
+    HudToggled: true, // 0
+    HudStats: true, // 0
+    HudSpeed: true, // 0
+    HudOnline: true, // 0
+    HudLocation: true, // 0
+    HudKey: true, // 0
+    HudMap: true, // 0
+    HudCompass: true,
+    VolumeInterface: 100, // 100
+    VolumeQuest: 50, // 100
+    VolumeAmbient: 80, // 100
+    VolumePhoneRadio: 50, // 100
+    VolumeVoice: 100, // 100
+    VolumeRadio: 70,
+    VolumeBoombox: 70,
+    FirstMute: false, // 0
+    DistancePlayer: 50, // 100
+    DistanceVehicle: 50, // 100
+
+    //Прицел
+    cPToggled: false,
+    cPWidth: 2,
+    cPGap: 2,
+    cPDot: true,
+    cPThickness: 0,
+    cPColorR: 255,
+    cPColorG: 255,
+    cPColorB: 255,
+    cPOpacity: 9,
+    cPCheck: true,
+    
+    APunishments: false,
+
+    CircleVehicle: false,
+    
+    //Эффекты
+    cEfValue: 0,
+
+    notifCount: 2,
+
+    hitPoint: false,
+});
+
+window.settingsStore.init = (json) => {
+    storeSettings.set (JSON.parse (json));
+}
+
+/***/ }),
+
+/***/ "./src/views/assets/css/main.js":
+/*!**************************************!*\
+  !*** ./src/views/assets/css/main.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/views/assets/css/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.sass */ "./src/views/assets/css/style.sass");
+/* harmony import */ var _style_sass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_sass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _animate_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animate.css */ "./src/views/assets/css/animate.css");
+/* harmony import */ var _animate_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_animate_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _puregrid_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./puregrid.css */ "./src/views/assets/css/puregrid.css");
+/* harmony import */ var _puregrid_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_puregrid_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _statistics_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./statistics.css */ "./src/views/assets/css/statistics.css");
+/* harmony import */ var _statistics_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_statistics_css__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/views/assets/fonts/main.js":
+/*!****************************************!*\
+  !*** ./src/views/assets/fonts/main.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _icons_fonts_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./icons/fonts.css */ "./src/views/assets/fonts/icons/fonts.css");
+/* harmony import */ var _icons_fonts_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_icons_fonts_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Roboto_fonts_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Roboto/fonts.css */ "./src/views/assets/fonts/Roboto/fonts.css");
+/* harmony import */ var _Roboto_fonts_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Roboto_fonts_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _UniNeue_fonts_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UniNeue/fonts.css */ "./src/views/assets/fonts/UniNeue/fonts.css");
+/* harmony import */ var _UniNeue_fonts_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_UniNeue_fonts_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Montserrat_fonts_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Montserrat/fonts.css */ "./src/views/assets/fonts/Montserrat/fonts.css");
+/* harmony import */ var _Montserrat_fonts_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Montserrat_fonts_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _RFDewi_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./RFDewi/style.css */ "./src/views/assets/fonts/RFDewi/style.css");
+/* harmony import */ var _RFDewi_style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_RFDewi_style_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _TTNorms_fonts_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TTNorms/fonts.css */ "./src/views/assets/fonts/TTNorms/fonts.css");
+/* harmony import */ var _TTNorms_fonts_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_TTNorms_fonts_css__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
