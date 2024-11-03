@@ -1,0 +1,594 @@
+
+const Bool = (text) => {
+    return String(text).toLowerCase() === "true";
+}
+
+const getPngToItemId = (data) => {
+    let title = data.Name;
+    let png = data.Png;
+
+    switch (data.Type)
+    {
+        case 0:
+            const itemInfo = window.getItem (data.ItemId)
+            png = getPng (data, itemInfo);
+
+            if (title.length < 1) {
+                if (data.ItemId === json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.CarCoupon) {
+                    title = data.Data.toLowerCase();
+                } else {
+                    title = itemInfo.Name;
+                }
+            }
+            break;
+        case 1:
+            switch (data.ItemId)
+            {
+                case 1:
+                    png = document.cloud + "img/roulette/items_13.png";
+                    if (title.length < 1)
+                        title = "VIP Silver";
+                    break;
+                case 2:
+                    png = document.cloud + "img/roulette/items_14.png";
+                    if (title.length < 1)
+                        title = "VIP Gold";
+                    break;
+                case 3:
+                    png = document.cloud + "img/roulette/items_15.png";
+                    if (title.length < 1)
+                        title = "VIP Platinum";
+                    break;
+                case 4:
+                    png = document.cloud + "img/roulette/items_16.png";
+                    if (title.length < 1)
+                        title = "VIP Diamond";
+                    break;
+            }
+            break;
+        case 2:
+            png = document.cloud + "img/roulette/items_0.png";
+            if (title.length < 1)
+                title = "Игровая валюта";
+            break;
+        case 3:
+            png = document.cloud + "img/roulette/items_5.png";
+            if (title.length < 1)
+                title = "RedBucks";
+            break;
+    }
+    return {
+        name: title,
+        png: png
+    }
+}
+
+const isPng = (url) => {
+    return /^((ftp|http|https):\/\/)?(www\.)?([A-Za-zА-Яа-я0-9]{1}[A-Za-zА-Яа-я0-9\-]*\.?)*\.{1}[A-Za-zА-Яа-я0-9-]{2,8}(\/([\w#!:.?+=&%@!\-\/])*)?/.test(url);
+}
+
+const getPng = (localItem, iconInfo) => {
+    try {
+        if (localItem.ItemId !== json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.BodyArmor && iconInfo.functionType === json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemType.Clothes) {
+            let pngDirectory = "inventoryItems/clothes";
+            
+            let dataParse;
+            if (localItem.Data.split("_").length) 
+                dataParse = localItem.Data.split("_");
+    
+            
+            let drawableId = 0;
+            let textureId = 0;
+
+            if (dataParse[0] != undefined)
+                drawableId = Number (dataParse[0]);
+
+            if (dataParse[1] != undefined)
+                textureId = Number (dataParse[1]);
+
+            if (Bool (dataParse[2])) 
+                pngDirectory += "/male"
+            else 
+                pngDirectory += "/female"
+            
+            switch (localItem.ItemId) {
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Mask:
+                    pngDirectory += "/masks"
+                    break;
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Glasses:
+                    pngDirectory += "/glasses"
+                    break;                 
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Ears:
+                    pngDirectory += "/ears"
+                    break;
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Jewelry:
+                    pngDirectory += "/accessories"
+                    break;                   
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Bracelets:
+                    pngDirectory += "/bracelets"
+                    break;
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Hat:
+                    pngDirectory += "/hats"
+                    break;
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Leg:
+                    pngDirectory += "/legs"
+                    break;
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Feet:
+                    pngDirectory += "/shoes"
+                    break;  
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Top:
+                    pngDirectory += "/tops"
+                    break;
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Undershit:
+                    pngDirectory += "/undershit"
+                    break;
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Watches:
+                    pngDirectory += "/watches"
+                    break;                    
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Bag:
+                    pngDirectory += "/bags"
+                    break;
+                case json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.Gloves:
+                    pngDirectory += "/gloves"
+                    break;
+            }
+            pngDirectory += `/${drawableId}_${textureId}`
+            return document.cloud + pngDirectory + '.png';
+        } else if (localItem.ItemId === json_itemsInfo_js__WEBPACK_IMPORTED_MODULE_0__.ItemId.CarCoupon) {
+            return document.cloud + "inventoryItems/vehicle" + `/${localItem.Data.toLowerCase()}.png`;
+        }
+        return document.cloud + "inventoryItems/items" + `/${localItem.ItemId}.png`;
+    }
+    catch (e) 
+    {
+        console.log("asdas - " + e.toString())
+    }
+}
+
+/***/ }),
+
+/***/ "./src/views/player/menu/elements/inventory/wComponents.js":
+/*!*****************************************************************!*\
+  !*** ./src/views/player/menu/elements/inventory/wComponents.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    "100416529": {
+        "Count": 3,
+        "Components": {
+            "1077065191": { "Name": "WCT_VAR_WOOD", "Desc": "WCD_VAR_WOOD", "Price": 3000, "Type": 1 },
+            "2805810788": { "Name": "WCT_SUPP", "Desc": "WCD_AR_SUPP2", "Price": 1800, "Type": 3 },
+            "3159677559": { "Name": "WCT_SCOPE_MAX", "Desc": "WCD_SCOPE_MAX", "Price": 2300, "Type": 4 },
+            "3527687644": { "Name": "WCT_SCOPE_LRG", "Desc": "WCD_SCOPE_LRG", "Price": 2500, "Type": 4 }
+        }
+    },
+    "171789620": {
+        "Count": 3,
+        "Components": {
+            "202788691": { "Name": "WCT_GRIP", "Desc": "WCD_GRIP", "Price": 900, "Type": 8 },
+            "2076495324": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 1200, "Type": 7 },
+            "2855028148": { "Name": "WCT_SCOPE_SML", "Desc": "WCD_SCOPE_SML", "Price": 1500, "Type": 4 }
+        }
+    },
+    "324215364": {
+        "Count": 4,
+        "Components": {
+            "899381934": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 800, "Type": 7 },
+            "1215999497": { "Name": "WCT_VAR_GOLD", "Desc": "WCD_VAR_GOLD", "Price": 900, "Type": 1 },
+            "2637152041": { "Name": "WCT_SCOPE_MAC", "Desc": "WCD_SCOPE_MAC", "Price": 1100, "Type": 4 },
+            "2805810788": { "Name": "WCT_SUPP", "Desc": "WCD_AR_SUPP2", "Price": 1000, "Type": 3 }
+        }
+    },
+    "453432689": {
+        "Count": 3,
+        "Components": {
+            "899381934": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 400, "Type": 7 },
+            "1709866683": { "Name": "WCT_SUPP", "Desc": "WCD_PI_SUPP", "Price": 600, "Type": 3 },
+            "3610841222": { "Name": "WCT_VAR_GOLD", "Desc": "WCD_VAR_GOLD", "Price": 500, "Type": 1 }
+        }
+    },
+    "487013001": {
+        "Count": 3,
+        "Components": {
+            "2076495324": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 500, "Type": 7 },
+            "2732039643": { "Name": "WCT_VAR_GOLD", "Desc": "WCD_VAR_GOLD", "Price": 600, "Type": 1 },
+            "3859329886": { "Name": "WCT_SUPP", "Desc": "WCD_SR_SUPP", "Price": 700, "Type": 3 }
+        }
+    },
+    "584646201": {
+        "Count": 3,
+        "Components": {
+            "899381934": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 900, "Type": 7 },
+            "2608252716": { "Name": "WCT_VAR_METAL", "Desc": "WCD_VAR_METAL", "Price": 1000, "Type": 1 },
+            "3271853210": { "Name": "WCT_SUPP", "Desc": "WCD_PI_SUPP", "Price": 1100, "Type": 3 }
+        }
+    },
+    "736523883": {
+        "Count": 4,
+        "Components": {
+            "202788691": { "Name": "WCT_GRIP", "Desc": "WCD_GRIP", "Price": 900, "Type": 8 },
+            "663170192": { "Name": "WCT_VAR_GOLD", "Desc": "WCD_VAR_GOLD", "Price": 900, "Type": 1 },
+            "1019656791": { "Name": "WCT_SCOPE_MAC", "Desc": "WCD_SCOPE_MAC", "Price": 1100, "Type": 4 },
+            "2076495324": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 1200, "Type": 7 },
+            "2637152041": { "Name": "WCT_SCOPE_MAC", "Desc": "WCD_SCOPE_MAC", "Price": 1100, "Type": 4 },
+            "3271853210": { "Name": "WCT_SUPP", "Desc": "WCD_PI_SUPP", "Price": 1400, "Type": 3 }
+        }
+    },
+    "1593441988": {
+        "Count": 3,
+        "Components": {
+            "899381934": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 400, "Type": 7 },
+            "3271853210": { "Name": "WCT_SUPP", "Desc": "WCD_PI_SUPP", "Price": 600, "Type": 3 },
+            "3328527730": { "Name": "WCT_VAR_GOLD", "Desc": "WCD_VAR_GOLD", "Price": 500, "Type": 1 }
+        }
+    },
+    "2017895192": { "Count": 1, "Components": { "2242268665": { "Name": "WCT_VAR_METAL", "Desc": "WCD_VAR_METAL", "Price": 600, "Type": 1 } } },
+    "2132975508": {
+        "Count": 5,
+        "Components": {
+            "202788691": { "Name": "WCT_GRIP", "Desc": "WCD_GRIP", "Price": 900, "Type": 8 },
+            "2076495324": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 1200, "Type": 7 },
+            "2205435306": { "Name": "WCT_SUPP", "Desc": "WCD_AR_SUPP", "Price": 700, "Type": 3 },
+            "2824322168": { "Name": "WCT_VAR_METAL", "Desc": "WCD_VAR_BPR", "Price": 1600, "Type": 1 },
+            "2855028148": { "Name": "WCT_SCOPE_SML", "Desc": "WCD_SCOPE_SML", "Price": 900, "Type": 4 }
+        }
+    },
+    "3249783761": { "Count": 1, "Components": { "384708672": { "Name": "WCT_REV_VARB", "Desc": "WCD_REV_VARB", "Price": 1300, "Type": 1 }, "2492708877": { "Name": "WCT_REV_VARG", "Desc": "WCD_REV_VARG", "Price": 1000, "Type": 1 } } },
+    "3675956304": { "Count": 1, "Components": { "3271853210": { "Name": "WCT_SUPP", "Desc": "WCD_PI_SUPP", "Price": 900, "Type": 3 } } },
+    "3523564046": {
+        "Count": 3,
+        "Components": {
+            "899381934": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 900, "Type": 7 },
+            "2053798779": { "Name": "WCT_VAR_WOOD", "Desc": "WCD_VAR_HPST", "Price": 1000, "Type": 1 },
+            "3271853210": { "Name": "WCT_SUPP", "Desc": "WCD_PI_SUPP", "Price": 1100, "Type": 3 }
+        }
+    },
+    "3342088282": {
+        "Count": 5,
+        "Components": {
+            "202788691": { "Name": "WCT_GRIP", "Desc": "WCD_GRIP", "Price": 1400, "Type": 8 },
+            "371102273": { "Name": "WCT_VAR_GOLD", "Desc": "WCD_VAR_MKRF", "Price": 3000, "Type": 1 },
+            "471997210": { "Name": "WCT_SCOPE_LRG", "Desc": "WCD_SCOPE_LRF", "Price": 2300, "Type": 4 },
+            "2076495324": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 1300, "Type": 7 },
+            "2205435306": { "Name": "WCT_SUPP", "Desc": "WCD_AR_SUPP", "Price": 1600, "Type": 3 }
+        }
+    },
+    "2578377531": {
+        "Count": 3,
+        "Components": {
+            "899381934": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 400, "Type": 7 },
+            "2008591151": { "Name": "WCT_VAR_SIL", "Desc": "WCD_VAR_SIL", "Price": 500, "Type": 1 },
+            "2805810788": { "Name": "WCT_SUPP", "Desc": "WCD_AR_SUPP2", "Price": 600, "Type": 3 }
+        }
+    },
+    "3220176749": {
+        "Count": 5,
+        "Components": {
+            "202788691": { "Name": "WCT_GRIP", "Desc": "WCD_GRIP", "Price": 1200, "Type": 8 },
+            "1319990579": { "Name": "WCT_VAR_GOLD", "Desc": "WCD_VAR_GOLD", "Price": 2000, "Type": 1 },
+            "2076495324": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 900, "Type": 7 },
+            "2637152041": { "Name": "WCT_SCOPE_MAC", "Desc": "WCD_SCOPE_MAC", "Price": 1400, "Type": 4 },
+            "2805810788": { "Name": "WCT_SUPP", "Desc": "WCD_AR_SUPP2", "Price": 1100, "Type": 3 }
+        }
+    },
+    "2210333304": {
+        "Count": 5,
+        "Components": {
+            "202788691": { "Name": "WCT_GRIP", "Desc": "WCD_GRIP", "Price": 1300, "Type": 8 },
+            "2076495324": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 900, "Type": 7 },
+            "2205435306": { "Name": "WCT_SUPP", "Desc": "WCD_AR_SUPP", "Price": 1100, "Type": 3 },
+            "2698550338": { "Name": "WCT_SCOPE_LRG", "Desc": "WCD_SCOPE_LRG", "Price": 1400, "Type": 4 },
+            "3634075224": { "Name": "WCT_VAR_GOLD", "Desc": "WCD_VAR_GOLD", "Price": 2000, "Type": 1 }
+        }
+    },
+    "2937143193": {
+        "Count": 4,
+        "Components": {
+            "930927479": { "Name": "WCT_VAR_METAL", "Desc": "WCD_VAR_METAL", "Price": 2000, "Type": 1 },
+            "2076495324": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 900, "Type": 7 },
+            "2205435306": { "Name": "WCT_SUPP", "Desc": "WCD_AR_SUPP", "Price": 1100, "Type": 3 },
+            "2855028148": { "Name": "WCT_SCOPE_SML", "Desc": "WCD_SCOPE_SML", "Price": 1400, "Type": 4 }
+        }
+    },
+    "2640438543": {
+        "Count": 3,
+        "Components": {
+            "202788691": { "Name": "WCT_GRIP", "Desc": "WCD_GRIP", "Price": 400, "Type": 8 },
+            "2076495324": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 600, "Type": 7 },
+            "2805810788": { "Name": "WCT_SUPP", "Desc": "WCD_AR_SUPP2", "Price": 800, "Type": 3 }
+        }
+    },
+    "1432025498": {
+        "Count": 5,
+        "Components": {
+            "1108334355": { "Name": "WCT_HOLO", "Desc": "WCD_HOLO", "Price": 1200, "Type": 4 },
+            "77277509": { "Name": "WCT_SCOPE_MAC2", "Desc": "WCD_SCOPE_MAC", "Price": 1200, "Type": 4 },
+            "1060929921": { "Name": "WCT_SCOPE_SML2", "Desc": "WCD_SCOPE_SML", "Price": 1200, "Type": 4 },
+            "2076495324": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 600, "Type": 7 },
+            "2890063729": { "Name": "WCT_SUPP", "Desc": "WCD_SR_SUPP", "Price": 800, "Type": 3 },
+            "1602080333": { "Name": "WCT_MUZZ8", "Desc": "WCD_MUZZ_SR", "Price": 1800, "Type": 5 },
+            "3820854852": { "Name": "WCT_CAMO_1", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "387223451": { "Name": "WCT_CAMO_2", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "617753366": { "Name": "WCT_CAMO_3", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "4072589040": { "Name": "WCT_CAMO_4", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "8741501": { "Name": "WCT_CAMO_5", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "3693681093": { "Name": "WCT_CAMO_6", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "3783533691": { "Name": "WCT_CAMO_7", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "3639579478": { "Name": "WCT_CAMO_8", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "4012490698": { "Name": "WCT_CAMO_9", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "1739501925": { "Name": "WCT_CAMO_10", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "1178671645": { "Name": "WCT_CAMO_IND", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 }
+        }
+    },
+    "2024373456": {
+        "Count": 6,
+        "Components": {
+            "2076495324": { "Name": "WCT_FLASH", "Desc": "WCD_FLASH", "Price": 1200, "Type": 7 },
+            "2681951826": { "Name": "WCT_HOLO", "Desc": "WCD_HOLO", "Price": 1500, "Type": 4 },
+            "3842157419": { "Name": "WCT_SCOPE_MAC2", "Desc": "WCD_SCOPE_MAC", "Price": 1500, "Type": 4 },
+            "1038927834": { "Name": "WCT_SCOPE_SML2", "Desc": "WCD_SCOPE_SML", "Price": 1500, "Type": 4 },
+            "3271853210": { "Name": "WCT_SUPP", "Desc": "WCD_PI_SUPP", "Price": 1000, "Type": 3 },
+            "3113485012": { "Name": "WCT_MUZZ1", "Desc": "WCD_MUZZ", "Price": 1800, "Type": 5 },
+            "3362234491": { "Name": "WCT_MUZZ2", "Desc": "WCD_MUZZ", "Price": 1800, "Type": 5 },
+            "3725708239": { "Name": "WCT_MUZZ3", "Desc": "WCD_MUZZ", "Price": 1800, "Type": 5 },
+            "3968886988": { "Name": "WCT_MUZZ4", "Desc": "WCD_MUZZ", "Price": 1800, "Type": 5 },
+            "48731514": { "Name": "WCT_MUZZ5", "Desc": "WCD_MUZZ", "Price": 1800, "Type": 5 },
+            "880736428": { "Name": "WCT_MUZZ6", "Desc": "WCD_MUZZ", "Price": 1800, "Type": 5 },
+            "1303784126": { "Name": "WCT_MUZZ7", "Desc": "WCD_MUZZ", "Price": 1800, "Type": 5 },
+            "3641720545": { "Name": "WCT_BARR", "Desc": "WCD_BARR", "Price": 2100, "Type": 6 },
+            "2774849419": { "Name": "WCT_BARR2", "Desc": "WCD_BARR2", "Price": 2100, "Type": 6 },
+            "3298267239": { "Name": "WCT_CAMO_1", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "940943685": { "Name": "WCT_CAMO_2", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "1263226800": { "Name": "WCT_CAMO_3", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "3966931456": { "Name": "WCT_CAMO_4", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "1224100642": { "Name": "WCT_CAMO_5", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "899228776": { "Name": "WCT_CAMO_6", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "616006309": { "Name": "WCT_CAMO_7", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "2733014785": { "Name": "WCT_CAMO_8", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "572063080": { "Name": "WCT_CAMO_9", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "1170588613": { "Name": "WCT_CAMO_10", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 },
+            "966612367": { "Name": "WCT_CAMO_IND", "Desc": "WCD_INVALID", "Price": 1100, "Type": 9 }
+        }
+    }
+});
+
+/***/ }),
+
+/***/ "./src/views/player/menu/elements/inventory/wMaxHP.js":
+/*!************************************************************!*\
+  !*** ./src/views/player/menu/elements/inventory/wMaxHP.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    /* Pistols */
+    100: 500,
+    101: 500,
+    102: 500,
+    103: 500,
+    104: 500,
+    105: 500,
+    106: 500,
+    107: 500,
+    108: 500,
+    109: 500,
+    110: 500,
+    111: 500,
+    112: 600,
+    113: 600,
+    114: 600,
+    /* SMG */
+    115: 1500,
+    116: 1500,
+    117: 1500,
+    118: 1500,
+    119: 1500,
+    120: 2000,
+    121: 2000,
+    122: 1500,
+    123: 1500,
+    124: 1800,
+    125: 2500,
+    /* Rifles */
+    126: 3000,
+    127: 3000,
+    128: 3000,
+    129: 3000,
+    130: 3000,
+    131: 3000,
+    132: 4000,
+    133: 4000,
+    134: 4000,
+    135: 4000,
+    265: 4000,
+    /* Sniper */
+    136: 400,
+    137: 500,
+    138: 500,
+    139: 700,
+    140: 700,
+    /* Shotguns */
+    141: 400,
+    142: 400,
+    143: 400,
+    144: 400,
+    145: 400,
+    146: 400,
+    147: 400,
+    148: 400,
+    149: 500,
+    /* NEW WEAPONS */
+    150: 9999,
+    151: 9999,
+    152: 9999,
+    153: 9999,
+    154: 9999,
+    155: 9999,
+    156: 9999,
+    157: 9999,
+    158: 9999,
+    159: 9999,
+    160: 9999,
+    161: 9999,
+    162: 9999,
+
+    //Other
+
+    234: 300,
+    235: 1248,
+    236: 2250,
+    244: 1250,
+    225: 100,
+    229: 420,
+    249: 1000,
+});
+
+/***/ }),
+
+/***/ "./src/views/player/menu/elements/rewardslist/elements/data.js":
+/*!*********************************************************************!*\
+  !*** ./src/views/player/menu/elements/rewardslist/elements/data.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "daysName": () => (/* binding */ daysName),
+/* harmony export */   "getPngUrl": () => (/* binding */ getPngUrl),
+/* harmony export */   "getTypeToTitle": () => (/* binding */ getTypeToTitle),
+/* harmony export */   "statusType": () => (/* binding */ statusType),
+/* harmony export */   "getTimeFromMins": () => (/* binding */ getTimeFromMins),
+/* harmony export */   "getTimeFromMinsText": () => (/* binding */ getTimeFromMinsText)
+/* harmony export */ });
+/* harmony import */ var _views_player_menu_elements_inventory_getPng__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/views/player/menu/elements/inventory/getPng */ "./src/views/player/menu/elements/inventory/getPng.js");
+
+
+const daysName = [
+    "Понедельник",
+    "Вторник",
+    "Среда",
+    "Четверг",
+    "Пятница",
+    "Суббота",
+    "Воскресенье",
+    "Еженедельная награда",
+]
+
+const getPngToItemId = (item) => {
+    const itemData = {
+        ItemId: item.itemId,
+        Data: item.data,
+    }
+    return (0,_views_player_menu_elements_inventory_getPng__WEBPACK_IMPORTED_MODULE_0__.getPng) (itemData, window.getItem (item.itemId))
+}
+
+const getPngUrl = (item) => {
+    if ((0,_views_player_menu_elements_inventory_getPng__WEBPACK_IMPORTED_MODULE_0__.isPng)(item.image))
+        return item.image;
+    else
+        return getPngToItemId (item);
+}
+
+const getTypeToTitle = (type, itemId) => {
+    switch (type)
+    {
+        case 0:
+            return window.getItem (itemId).Name;
+        case 1:
+            switch (itemId)
+            {
+                case 1:
+                    return "VIP Silver";
+                case 2:
+                    return "VIP Gold";
+                case 3:
+                    return "VIP Platinum";
+                case 4:
+                    return "VIP Diamond";
+            }
+            break;
+        case 2:
+            return "Игровая валюта";
+        case 3:
+            return "RedBucks";
+    }
+    return "";
+}
+
+const statusType = {
+    none: 0,
+    received: 1,
+    receive: 2,
+    skip: 3,
+    time: 4,
+}
+
+const formatIntZero = (num, length) => {
+    return ("0" + num).slice(0 - length);
+}
+
+const getTimeFromMins = (mins, isNonSec = false) => {
+    let hours = Math.trunc(mins / 60);
+    let minutes = mins % 60;
+    if (isNonSec)
+        return formatIntZero(hours, 2) + ':' + formatIntZero(minutes, 2);
+        
+    return formatIntZero(hours, 2) + ':' + formatIntZero(minutes, 2) + ':00';
+}
+
+const getTimeFromMinsText = (mins) => {
+    let hours = Math.trunc(mins / 60);
+    let minutes = mins % 60;
+
+    let minutesText = "минут";
+
+    switch(minutes) {
+        case 1:
+            minutesText = "минута";
+            break;
+        case 2:
+        case 3:
+        case 4:
+            minutesText = "минуты";
+            break;
+    }
+
+    if (hours > 0) {
+        let hoursText = "часов";
+        switch(hours) {
+            case 1:
+                hoursText = "час";
+                break;
+            case 2:
+            case 3:
+            case 4:
+                hoursText = "часа";
+                break;
+        }
+
+        return `${hours} ${hoursText} ${minutes} ${minutesText}`;
+    }
+
+    return `${minutes} ${minutesText}`;
+}
+
+/***/ }),
+
+/***/ "./src/views/player/newauthentication/chars/create/elements/appearance/appearances.js":
+/*!********************************************************************************************!*\
+  !*** ./src/views/player/newauthentication/chars/create/elements/appearance/appearances.js ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
